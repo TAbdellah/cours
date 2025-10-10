@@ -366,6 +366,8 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #6c5ce7 0%, #d63031 100%);
         }
+            .footer-bottom .heart{color:#e74c3c;display:inline-block;animation:heartbeat 1.5s ease-in-out infinite}
+    @keyframes heartbeat{0%,100%{transform:scale(1)}10%,30%{transform:scale(1.1)}20%,40%{transform:scale(1)}}
     </style>
 </head>
 <body>
@@ -478,8 +480,19 @@
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 - Cours d'Informatique 2ème Année | Tous droits réservés</p>
+    <footer class="footer">
+      <div class="footer-content">
+        <strong>© 2025-2026 Tous droits réservés</strong>
+        Académie Régionale de l'Éducation et de la Formation – Région Souss Massa<br>
+        Direction Provinciale Inzegane Aït Melloul<br>
+        Collège Othmane Ibn Affane
+      </div>
+      <div class="footer-bottom">
+        <small>
+          Conception et réalisation : <span class="author">Abdellah TAHTOH</span><br>
+          Fait avec <span class="heart">❤</span> au service de l'éducation numérique
+        </small>
+      </div>
     </footer>
 
     <script>
