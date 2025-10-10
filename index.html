@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours d'Informatique - 2ème Année</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ffeaa7 100%);
+            min-height: 100vh;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 50%, #fd79a8 100%);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(108, 92, 231, 0.3);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid #fdcb6e;
+        }
+
+        header::before {
+            content: '✨ 📚 ✏️ 🎓 💡 🖥️ 🌟 🔬';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            opacity: 0.1;
+            white-space: nowrap;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+            position: relative;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header p {
+            color: #ffffff;
+            font-size: 1.3rem;
+            position: relative;
+            font-weight: 400;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .unit-card {
+            background: linear-gradient(135deg, #ffffff 0%, #ffeaa7 5%, #ffffff 100%);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(253, 203, 110, 0.3);
+            transition: all 0.4s ease;
+            border: 3px solid #fdcb6e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .unit-card::before {
+            content: '⭐';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            opacity: 0.2;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        .unit-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(253, 203, 110, 0.5);
+            border-color: #fd79a8;
+        }
+
+        .unit-card h2 {
+            color: #6c5ce7;
+            font-size: 1.8rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 700;
+        }
+
+        .unit-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #a29bfe 0%, #fd79a8 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(162, 155, 254, 0.4);
+        }
+
+        .sequences {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .sequences > li {
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background: linear-gradient(to right, #ffeaa7 0%, #fff5f5 100%);
+            border-radius: 10px;
+            border-left: 4px solid #fd79a8;
+            transition: all 0.3s ease;
+        }
+
+        .sequences > li:hover {
+            background: linear-gradient(to right, #fdcb6e 0%, #ffeaa7 100%);
+            transform: translateX(5px);
+        }
+
+        .sequences > li > strong {
+            color: #2d3436;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sequences > li > strong::before {
+            content: '📌';
+            font-size: 1rem;
+        }
+
+        .sub-topics {
+            list-style: none;
+            margin-top: 0.5rem;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            color: #636e72;
+        }
+
+        .sub-topics li {
+            padding: 0.4rem 0;
+            border: none;
+            background: none;
+        }
+
+        .sub-topics li::before {
+            content: "→ ";
+            color: #6c5ce7;
+            font-weight: bold;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 1.2rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-lessons {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+        }
+
+        .btn-exercises {
+            background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+            color: white;
+        }
+
+        .btn:hover:not(:disabled) {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:disabled {
+            background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            box-shadow: 0 3px 10px rgba(214, 48, 49, 0.4);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(45, 52, 54, 0.85);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+            padding: 2rem 0;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #ffeaa7 5%, #ffffff 100%);
+            padding: 3rem;
+            border-radius: 30px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            margin: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            border: 3px solid #fdcb6e;
+        }
+
+        .modal-content h3 {
+            color: #6c5ce7;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .modal-content h4 {
+            color: #fd79a8;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        .modal-content p, .modal-content ul {
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+            color: #2d3436;
+        }
+
+        .modal-content ul {
+            margin-left: 2rem;
+        }
+
+        .modal-content ol {
+            margin-left: 2rem;
+            line-height: 1.8;
+            color: #2d3436;
+        }
+
+        .definition-box {
+            background: linear-gradient(to right, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 1.8rem;
+            border-radius: 15px;
+            border-left: 6px solid #00b894;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.2);
+        }
+
+        .definition-box p {
+            color: #00695c;
+            font-weight: 500;
+        }
+
+        .close-btn {
+            float: right;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: #b2bec3;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #fd79a8;
+            transform: rotate(90deg);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 50%, #fd79a8 100%);
+            margin-top: 4rem;
+            color: #ffffff;
+            box-shadow: 0 -5px 30px rgba(108, 92, 231, 0.3);
+            border-top: 5px solid #fdcb6e;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1rem; }
+            .units-grid { grid-template-columns: 1fr; }
+            .button-group { flex-direction: column; }
+            .modal-content { padding: 2rem; }
+        }
+
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #ffeaa7; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #a29bfe 0%, #fd79a8 100%);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #6c5ce7 0%, #d63031 100%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💻 Cours d'Informatique</h1>
+        <p>2ème Année - Programme Complet</p>
+    </header>
+
+    <div class="container">
+        <div class="units-grid">
+            <!-- Rappel -->
+            <div class="unit-card">
+                <h2><span class="unit-icon">📌</span> Rappel</h2>
+                <div class="sequences">
+                    <li>Rappel sur le Système Informatique</li>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-lessons" onclick="openLesson('rappel')">📖 Voir la Leçon</button>
+                    <button class="btn btn-exercises" disabled>📝 Exercices <span class="coming-soon">Bientôt</span></button>
+                </div>
+            </div>
+
+            <!-- Unité 1 -->
+            <div class="unit-card">
+                <h2><span class="unit-icon">1</span> Environnement Système</h2>
+                <div class="sequences">
+                    <li>
+                        <strong>Séquence 1 : Environnement matériel</strong>
+                        <ul class="sub-topics">
+                            <li>Configuration monoposte</li>
+                            <li>Réseau local</li>
+                            <li>Configuration matérielle</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Séquence 2 : Système d'exploitation</strong>
+                        <ul class="sub-topics">
+                            <li>Système d'exploitation réseau</li>
+                            <li>Gestion des utilisateurs</li>
+                            <li>Partage des ressources</li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-lessons" onclick="openLesson('unite1')">📖 Voir la Leçon</button>
+                    <button class="btn btn-exercises" onclick="openExercises('unite1')">📝 Exercices</button>
+                </div>
+            </div>
+
+            <!-- Unité 2 -->
+            <div class="unit-card">
+                <h2><span class="unit-icon">2</span> Échange d'Informations</h2>
+                <div class="sequences">
+                    <li>Échange d'informations à travers un réseau local</li>
+                    <li>Envoi / Réception de messages dans un réseau local</li>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-lessons" onclick="openLesson('unite2')">📖 Voir la Leçon</button>
+                    <button class="btn btn-exercises" disabled>📝 Exercices <span class="coming-soon">Bientôt</span></button>
+                </div>
+            </div>
+
+            <!-- Unité 3 -->
+            <div class="unit-card">
+                <h2><span class="unit-icon">3</span> Tableurs</h2>
+                <div class="sequences">
+                    <li>
+                        <strong>Gestion d'un fichier tableur</strong>
+                        <ul class="sub-topics">
+                            <li>Feuilles et Cellules</li>
+                            <li>Formules et Fonctions</li>
+                            <li>Mise en forme d'un tableau</li>
+                            <li>Graphiques</li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-lessons" onclick="openLesson('unite3')">📖 Voir la Leçon</button>
+                    <button class="btn btn-exercises" disabled>📝 Exercices <span class="coming-soon">Bientôt</span></button>
+                </div>
+            </div>
+
+            <!-- Unité 4 -->
+            <div class="unit-card">
+                <h2><span class="unit-icon">4</span> Programmation Logo</h2>
+                <div class="sequences">
+                    <li>
+                        <strong>Langages de programmation</strong>
+                        <ul class="sub-topics">
+                            <li>Environnement Logo</li>
+                            <li>Primitives de base</li>
+                            <li>Instruction de répétition</li>
+                            <li>Procédures</li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-lessons" disabled>📖 Leçon <span class="coming-soon">Bientôt</span></button>
+                    <button class="btn btn-exercises" disabled>📝 Exercices <span class="coming-soon">Bientôt</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour les leçons -->
+    <div id="contentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - Cours d'Informatique 2ème Année | Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Configuration des liens d'exercices
+        const exercisesLinks = {
+            unite1: 'https://tabdellah.github.io/u1/' // Ajoutez votre lien d'exercices ici
+        };
+
+        const lessons = {
+            rappel: `
+                <h3>Rappel sur le Système Informatique</h3>
+                
+                <div class="definition-box">
+                    <p><strong>L'informatique</strong> vient de deux mots : <strong>information</strong> et <strong>automatique</strong>.</p>
+                    <p><strong>L'informatique</strong> est la science du traitement automatique des informations.</p>
+                    <p><strong>L'information</strong> est un ensemble de données ayant un sens.</p>
+                </div>
+
+                <h4>Les Formes d'information</h4>
+                <p>L'information peut être sous différentes formes :</p>
+                <ul>
+                    <li>Texte</li>
+                    <li>Image</li>
+                    <li>Son</li>
+                    <li>Vidéo</li>
+                </ul>
+
+                <h4>Le Traitement</h4>
+                <p>Le traitement est une suite d'opérations effectuées pour passer d'un état initial à un état final.</p>
+                
+                <p><strong>Les types de traitement :</strong></p>
+                <ul>
+                    <li>Manuel</li>
+                    <li>Semi-automatique</li>
+                    <li>Automatique</li>
+                </ul>
+            `,
+            
+            unite1: `
+                <h3>Unité 1 : Environnement matériel d'un système informatique</h3>
+                
+                <div class="definition-box">
+                    <p><strong>Un ordinateur</strong> est une machine du traitement automatique des informations.</p>
+                </div>
+
+                <h4>Composition d'un ordinateur</h4>
+                <p>Un ordinateur est constitué :</p>
+                <ul>
+                    <li>D'un boîtier appelé <strong>Unité centrale</strong></li>
+                    <li>Des <strong>périphériques</strong> comme le clavier, la souris, l'imprimante...</li>
+                </ul>
+
+                <h4>Les Périphériques et leurs fonctions</h4>
+                <ul>
+                    <li><strong>Écran</strong> : Afficher des informations</li>
+                    <li><strong>Clavier</strong> : Saisir du texte, des chiffres ou des commandes</li>
+                    <li><strong>Souris</strong> : Sélectionner, déplacer et manipuler des objets à l'écran</li>
+                    <li><strong>Modem</strong> : Connecter votre ordinateur à Internet</li>
+                    <li><strong>Scanner</strong> : Numériser des textes ou des images</li>
+                    <li><strong>Haut-parleur</strong> : Restituer le son des programmes multimédia</li>
+                    <li><strong>Imprimante</strong> : Imprimer les informations sur papier</li>
+                    <li><strong>Microphone</strong> : Enregistrer votre voix ou d'autres sons</li>
+                </ul>
+
+                <h4>Les composants internes de l'Unité centrale</h4>
+                <ul>
+                    <li><strong>Carte mère</strong> : Assurer la connexion entre l'ensemble des éléments essentiels de l'ordinateur</li>
+                    <li><strong>Processeur</strong> : Le "cerveau" de l'ordinateur, exécutant les instructions et traitant les données</li>
+                    <li><strong>RAM</strong> : Stocker de manière temporaire les données lorsqu'on travaille sur l'ordinateur</li>
+                    <li><strong>Disques</strong> : Stocker les données et les conserver même en l'absence d'alimentation électrique</li>
+                    <li><strong>Carte graphique</strong> : Convertir les données numériques en images affichables sur un écran</li>
+                    <li><strong>Carte réseau</strong> : Permettre de connecter l'ordinateur à d'autres ordinateurs</li>
+                    <li><strong>BIOS</strong> : Le premier programme chargé en mémoire dès que vous allumez votre ordinateur</li>
+                    <li><strong>Boîte d'Alimentation</strong> : Fournir du courant électrique à l'ensemble des composants de l'ordinateur</li>
+                </ul>
+
+                <h4>Système d'exploitation</h4>
+                <p>Un <strong>système d'exploitation</strong> est un logiciel de base qui gère le matériel d'un ordinateur et fournit une interface pour l'utilisateur.</p>
+                
+                <p><strong>Les fonctionnalités d'un système d'exploitation :</strong></p>
+                <ul>
+                    <li>Gestion du matériel</li>
+                    <li>Organisation des fichiers</li>
+                    <li>Lancement des programmes</li>
+                    <li>Protection des données</li>
+                    <li>Fourniture d'une interface utilisateur</li>
+                    <li>Gestion de la connectivité réseau</li>
+                </ul>
+
+                <p><strong>Exemples de systèmes d'exploitation :</strong> Windows, Linux, macOS, Android, iOS</p>
+
+                <h4>Réseau Local</h4>
+                <p><strong>Les méthodes de connexion :</strong></p>
+                <ul>
+                    <li><strong>Méthode filaire (avec câble)</strong> : Connexion via câble réseau</li>
+                    <li><strong>Méthode sans fil (sans câble)</strong> : Connexion via WiFi</li>
+                </ul>
+
+                <h4>Les équipements réseau</h4>
+                <ul>
+                    <li><strong>Routeur WiFi</strong> : Appareil permettant aux appareils sans fil de se connecter à un réseau local et à Internet</li>
+                    <li><strong>Commutateur</strong> : Appareil permettant de relier plusieurs appareils dans un réseau local en transférant les données uniquement vers le destinataire approprié</li>
+                    <li><strong>Hub</strong> : Appareil permettant de relier plusieurs appareils en transmettant les données à tous les appareils connectés</li>
+                    <li><strong>Point d'accès</strong> : Appareil permettant aux appareils sans fil de se connecter à un réseau filaire</li>
+                </ul>
+
+                <h4>Les topologies réseau</h4>
+                <ul>
+                    <li><strong>Étoile</strong> : Tous les appareils sont connectés à un point central</li>
+                    <li><strong>Bus</strong> : Tous les appareils sont connectés à une ligne principale</li>
+                    <li><strong>Anneau</strong> : Les appareils sont connectés dans un cercle fermé</li>
+                </ul>
+            `,
+            
+            unite2: `
+                <h3>Unité 2 : Échange d'informations</h3>
+                
+                <h4>Le partage et l'échange des fichiers</h4>
+                <p>Pour partager un dossier dans un réseau local, suivez ces étapes :</p>
+                <ol>
+                    <li>Clic droit sur le dossier à partager</li>
+                    <li>Sélectionner "Propriétés"</li>
+                    <li>Aller dans l'onglet "Partage"</li>
+                    <li>Cliquer sur "Partage avancé"</li>
+                    <li>Cocher "Partager ce dossier"</li>
+                    <li>Définir les autorisations</li>
+                </ol>
+
+                <h4>Méthodes d'accès aux fichiers partagés</h4>
+                <ul>
+                    <li>Via l'explorateur de fichiers</li>
+                    <li>Via l'adresse réseau</li>
+                    <li>Via un lecteur réseau mappé</li>
+                </ul>
+
+                <h4>La messagerie instantanée</h4>
+                <p>La messagerie instantanée est une méthode qui permet d'envoyer et de recevoir des messages instantanément. Il existe plusieurs logiciels qui assurent cette fonctionnalité :</p>
+                <ul>
+                    <li><strong>LAN Messenger</strong></li>
+                    <li><strong>Softros LAN Messenger</strong></li>
+                    <li><strong>BeeBEEP</strong></li>
+                </ul>
+
+                <h4>Fonctionnalités de LAN Messenger</h4>
+                <ul>
+                    <li>Messagerie personnelle et de groupe</li>
+                    <li>Transfert de fichiers</li>
+                    <li>Historique des messages</li>
+                    <li>Alarmes de notification</li>
+                    <li>Interface utilisateur multilingue</li>
+                </ul>
+
+                <p>Tous les utilisateurs d'un réseau local peuvent communiquer entre eux directement par écrit au clavier ou oralement par microphone.</p>
+            `,
+            
+            unite3: `
+                <h3>Unité 3 : Tableurs</h3>
+                
+                <div class="definition-box">
+                    <p><strong>Un tableur</strong> est un logiciel d'application qui permet d'effectuer des calculs et des traitements automatiques sur des données organisées dans un tableau.</p>
+                </div>
+
+                <h4>Exemples de logiciels tableur</h4>
+                <ul>
+                    <li>Microsoft Excel</li>
+                    <li>Google Sheets</li>
+                    <li>LibreOffice Calc</li>
+                </ul>
+
+                <h4>Structure d'une feuille Excel</h4>
+                <p>Dans les versions récentes :</p>
+                <ul>
+                    <li><strong>Nombre total de lignes :</strong> 1 048 576</li>
+                    <li><strong>Nombre total de colonnes :</strong> 16 384 (XFD)</li>
+                </ul>
+
+                <h4>Les types de données</h4>
+                <ul>
+                    <li><strong>Texte</strong> : Chaînes de caractères</li>
+                    <li><strong>Nombres</strong> : Valeurs numériques</li>
+                    <li><strong>Dates</strong> : Dates et heures</li>
+                    <li><strong>Formules</strong> : Calculs automatiques</li>
+                </ul>
+
+                <h4>Les Formules</h4>
+                <p>Une <strong>formule</strong> est une expression composée d'opérandes (valeurs ou adresses de cellules) et d'opérateurs.</p>
+                <p><strong>Exemple :</strong> =A1+B1*C1</p>
+
+                <h4>Les Fonctions</h4>
+                <p>Une <strong>fonction</strong> est une formule prédéfinie qui porte un nom et sert à effectuer une opération ou plus.</p>
+                <p><strong>Exemples de fonctions :</strong></p>
+                <ul>
+                    <li>=SOMME(A1:A10) : Additionner les valeurs</li>
+                    <li>=MOYENNE(A1:A10) : Calculer la moyenne</li>
+                    <li>=MAX(A1:A10) : Trouver la valeur maximale</li>
+                    <li>=MIN(A1:A10) : Trouver la valeur minimale</li>
+                </ul>
+
+                <h4>Les adresses des cellules</h4>
+                <ul>
+                    <li><strong>Référence Relative</strong> : La référence varie lors de la recopie (Ex: A1)</li>
+                    <li><strong>Référence Absolue</strong> : La référence ne change pas lors de la recopie (Ex: $A$1)</li>
+                    <li><strong>Référence Mixte</strong> : Une partie est fixée (Ex: $A1 ou A$1)</li>
+                </ul>
+
+                <h4>Mise en forme</h4>
+                <ul>
+                    <li><strong>Police</strong> : Type, taille, style et couleur du texte</li>
+                    <li><strong>Bordures</strong> : Lignes entourant les cellules</li>
+                    <li><strong>Remplissage</strong> : Couleurs de fond des cellules</li>
+                    <li><strong>Fusionnement</strong> : Combinaison de cellules en une seule</li>
+                </ul>
+
+                <h4>Les actions conditionnelles</h4>
+                <p>La formule SI permet d'effectuer des tests conditionnels :</p>
+                <p><strong>Syntaxe :</strong> =SI(condition; valeur_si_vrai; valeur_si_faux)</p>
+                <p><strong>Exemple :</strong> =SI(A1>10; "Grand"; "Petit")</p>
+
+                <h4>Les Graphiques</h4>
+                <p>Les graphiques permettent de visualiser les données de manière graphique :</p>
+                <ul>
+                    <li><strong>Histogramme</strong> : Pour comparer des valeurs</li>
+                    <li><strong>Courbe</strong> : Pour montrer l'évolution</li>
+                    <li><strong>Secteur (camembert)</strong> : Pour montrer les proportions</li>
+                    <li><strong>Nuage de points</strong> : Pour montrer les corrélations</li>
+                </ul>
+            `
+        };
+
+        function openLesson(unit) {
+            const modal = document.getElementById('contentModal');
+            const modalBody = document.getElementById('modalBody');
+            
+            if (lessons[unit]) {
+                modalBody.innerHTML = lessons[unit];
+                modal.style.display = 'flex';
+            }
+        }
+
+        function openExercises(unit) {
+            if (exercisesLinks[unit]) {
+                window.open(exercisesLinks[unit], '_blank');
+            } else {
+                const modal = document.getElementById('contentModal');
+                const modalBody = document.getElementById('modalBody');
+                modalBody.innerHTML = `
+                    <h3>Exercices - Unité ${unit.replace('unite', '')}</h3>
+                    <p><strong>Les exercices seront bientôt disponibles !</strong></p>
+                    <p>Pour ajouter le lien des exercices, modifiez la variable <code>exercisesLinks.${unit}</code> dans le code JavaScript.</p>
+                `;
+                modal.style.display = 'flex';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('contentModal').style.display = 'none';
+        }
+
+        // Fermer la modal en cliquant en dehors
+        window.onclick = function(event) {
+            const modal = document.getElementById('contentModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Animation au scroll
+        const cards = document.querySelectorAll('.unit-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
