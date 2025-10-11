@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,8 +43,13 @@
         }
 
         @keyframes float {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
 
         header h1 {
@@ -57,8 +63,15 @@
         }
 
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         header p {
@@ -70,8 +83,15 @@
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .container {
@@ -109,8 +129,17 @@
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.2; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.2); }
+
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
         }
 
         .unit-card:hover {
@@ -148,7 +177,7 @@
             margin-top: 1rem;
         }
 
-        .sequences > li {
+        .sequences>li {
             padding: 0.8rem;
             margin: 0.5rem 0;
             background: linear-gradient(to right, #ffeaa7 0%, #fff5f5 100%);
@@ -157,12 +186,12 @@
             transition: all 0.3s ease;
         }
 
-        .sequences > li:hover {
+        .sequences>li:hover {
             background: linear-gradient(to right, #fdcb6e 0%, #ffeaa7 100%);
             transform: translateX(5px);
         }
 
-        .sequences > li > strong {
+        .sequences>li>strong {
             color: #2d3436;
             font-weight: 600;
             display: flex;
@@ -170,7 +199,7 @@
             gap: 0.5rem;
         }
 
-        .sequences > li > strong::before {
+        .sequences>li>strong::before {
             content: '📌';
             font-size: 1rem;
         }
@@ -290,7 +319,8 @@
             font-size: 1.4rem;
         }
 
-        .modal-content p, .modal-content ul {
+        .modal-content p,
+        .modal-content ul {
             margin-bottom: 1.2rem;
             line-height: 1.8;
             color: #2d3436;
@@ -445,30 +475,66 @@
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            10%, 30% { transform: scale(1.2); }
-            20%, 40% { transform: scale(1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            10%,
+            30% {
+                transform: scale(1.2);
+            }
+
+            20%,
+            40% {
+                transform: scale(1);
+            }
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            header p { font-size: 1rem; }
-            .units-grid { grid-template-columns: 1fr; }
-            .button-group { flex-direction: column; }
-            .modal-content { padding: 2rem; }
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .units-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .modal-content {
+                padding: 2rem;
+            }
         }
 
-        ::-webkit-scrollbar { width: 12px; }
-        ::-webkit-scrollbar-track { background: #ffeaa7; }
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ffeaa7;
+        }
+
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(135deg, #a29bfe 0%, #fd79a8 100%);
             border-radius: 10px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #6c5ce7 0%, #d63031 100%);
         }
+
+        
     </style>
 </head>
+
 <body>
     <header>
         <h1>💻 Cours d'Informatique</h1>
@@ -485,7 +551,8 @@
                 </div>
                 <div class="button-group">
                     <button class="btn btn-lessons" onclick="openLesson('rappel')">📖 Voir la Leçon</button>
-                    <button class="btn btn-exercises" disabled>📝 Exercices <span class="coming-soon">Bientôt</span></button>
+                    <button class="btn btn-exercises" disabled>📝 Exercices <span
+                            class="coming-soon">Bientôt</span></button>
                 </div>
             </div>
 
@@ -525,7 +592,8 @@
                 </div>
                 <div class="button-group">
                     <button class="btn btn-lessons" onclick="openLesson('unite2')">📖 Voir la Leçon</button>
-                    <button class="btn btn-exercises" disabled>📝 Exercices <span class="coming-soon">Bientôt</span></button>
+                    <button class="btn btn-exercises" disabled>📝 Exercices <span
+                            class="coming-soon">Bientôt</span></button>
                 </div>
             </div>
 
@@ -545,7 +613,8 @@
                 </div>
                 <div class="button-group">
                     <button class="btn btn-lessons" onclick="openLesson('unite3')">📖 Voir la Leçon</button>
-                    <button class="btn btn-exercises" disabled>📝 Exercices <span class="coming-soon">Bientôt</span></button>
+                    <button class="btn btn-exercises" disabled>📝 Exercices <span
+                            class="coming-soon">Bientôt</span></button>
                 </div>
             </div>
 
@@ -565,7 +634,8 @@
                 </div>
                 <div class="button-group">
                     <button class="btn btn-lessons" onclick="openLesson('unite4')">📖 Voir la Leçon</button>
-                    <button class="btn btn-exercises" disabled>📝 Exercices <span class="coming-soon">Bientôt</span></button>
+                    <button class="btn btn-exercises" disabled>📝 Exercices <span
+                            class="coming-soon">Bientôt</span></button>
                 </div>
             </div>
         </div>
@@ -793,62 +863,96 @@
                 </ul>
             `,
 
-            unite2: `
-                <h3>Unité 2 : Échange d'informations</h3>
+          unite2: `
+<h3>Unité 2 : Échange d'informations</h3>
 
-                <figure class="lesson-figure">
-                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&h=400&fit=crop" alt="Partage de fichiers">
-                    <div class="figcaption">
-                        <small>Partage et collaboration en réseau</small>
-                        <small>© Unsplash</small>
-                    </div>
-                </figure>
+<figure class="lesson-figure">
+  <img src="https://i.imgur.com/KNH2R4R.jpeg" alt="Partage de fichiers" style="max-width: 50%; height: auto; border-radius: 10px;">
+  <div class="figcaption">
+    <small>Partage et collaboration en réseau</small>
+  </div>
+</figure>
 
-                <h4>Le partage et l'échange des fichiers</h4>
-                <p>Pour partager un dossier dans un réseau local, suivez ces étapes :</p>
-                <ol style="font-size:1.05rem;line-height:1.8">
-                    <li>🗂️ Clic droit sur le dossier à partager</li>
-                    <li>⚙️ Propriétés → Onglet "Partage"</li>
-                    <li>✅ Activer le partage et définir les autorisations</li>
-                </ol>
+<h4>I- Le partage et l’échange des fichiers à travers un réseau local</h4>
 
-                <h4>Méthodes d'accès</h4>
-                <div class="image-grid">
-                    <div class="image-card">
-                        <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png" alt="Explorateur">
-                        <p><strong>Explorateur</strong><br>Accès direct</p>
-                    </div>
-                    <div class="image-card">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" alt="Adresse réseau">
-                        <p><strong>Adresse réseau</strong><br>\\\\ordinateur\\dossier</p>
-                    </div>
-                    <div class="image-card">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920243.png" alt="Lecteur mappé">
-                        <p><strong>Lecteur mappé</strong><br>Accès permanent</p>
-                    </div>
-                </div>
+<div class="definition-box">
+  <p><strong>📁 Le dossier/fichier partagé :</strong></p>
+  <p>Dans un réseau local, on peut accéder aux différents ordinateurs qui le constituent. Cet accès permet le partage des fichiers.</p>
+</div>
 
-                <h4>Messagerie instantanée sur LAN</h4>
-                <figure class="lesson-figure">
-                    <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=800&h=400&fit=crop" alt="Messagerie">
-                    <div class="figcaption">
-                        <small>Communication et messagerie en réseau</small>
-                        <small>© Unsplash</small>
-                    </div>
-                </figure>
+<ul style="font-size:1.05rem;line-height:1.8;margin:1.5rem 0">
+  <li>🌍 <strong>Fichier partagé :</strong> Un fichier sur votre machine est dit « partagé » lorsque d'autres machines peuvent y avoir accès depuis le réseau.</li>
+  <li>📂 <strong>Important :</strong> Pour partager un fichier, je dois obligatoirement le mettre dans un dossier partagé.</li>
+</ul>
 
-                <div class="definition-box">
-                    <p>La messagerie LAN permet l'envoi et la réception de messages en temps réel sur un réseau local.</p>
-                    <p>Elle facilite la communication rapide entre les utilisateurs d'un même réseau.</p>
-                </div>
+<h4>Étapes pour partager un dossier</h4>
+<ol style="font-size:1.05rem;line-height:1.8;margin:1rem 0">
+  <li>🖱️ Clic droit sur le dossier à partager</li>
+  <li>⚙️ Propriétés → Onglet "Partage"</li>
+  <li>✅ Activer le partage et définir les autorisations</li>
+</ol>
 
-                <h4>Avantages du partage en réseau</h4>
-                <ul style="font-size:1.05rem;line-height:1.8">
-                    <li>⚡ <strong>Rapidité</strong> - Transfert rapide des fichiers</li>
-                    <li>🤝 <strong>Collaboration</strong> - Travail en équipe facilité</li>
-                    <li>💾 <strong>Économie</strong> - Partage de ressources (imprimantes, stockage)</li>
-                    <li>🔄 <strong>Synchronisation</strong> - Accès aux données à jour</li>
-                </ul>
+<h4>Méthodes d’accès aux fichiers partagés</h4>
+<div class="image-grid">
+  <div class="image-card">
+    <img src="https://cdn-icons-png.flaticon.com/512/716/716784.png" alt="Explorateur">
+    <p><strong>Explorateur</strong><br>Accès direct</p>
+  </div>
+  <div class="image-card">
+    <img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" alt="Adresse réseau">
+    <p><strong>Adresse réseau</strong><br>\\ordinateur\dossier</p>
+  </div>
+  <div class="image-card">
+    <img src="https://cdn-icons-png.flaticon.com/512/2920/2920243.png" alt="Lecteur mappé">
+    <p><strong>Lecteur mappé</strong><br>Accès permanent</p>
+  </div>
+</div>
+
+<h4>II- L’envoi et la réception de messages dans un réseau local</h4>
+
+<div class="definition-box">
+  <p><strong>💬 1. La messagerie instantanée :</strong></p>
+  <p>C’est une méthode qui permet d’envoyer et de recevoir des messages instantanément.</p>
+  <p>Il existe plusieurs logiciels qui assurent cette fonctionnalité.</p>
+</div>
+
+<h4>📡 Logiciels de messagerie LAN</h4>
+
+<div style="background:linear-gradient(135deg,#55efc4 0%,#00b894 100%);padding:2rem;border-radius:15px;margin:2rem 0;box-shadow:0 5px 20px rgba(0,184,148,0.3)">
+  <div style="background:#fff;padding:1.5rem;border-radius:12px;margin-bottom:1.5rem">
+    <h4 style="color:#00b894;margin:0 0 1rem 0;font-size:1.3rem">💬 LAN Messenger</h4>
+    <p style="color:#2d3436;margin-bottom:1rem;line-height:1.6">Application de chat pour la communication dans un réseau local avec une variété de fonctionnalités pratiques.</p>
+    <a href="https://lanmessenger.github.io/" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#00b894 0%,#00cec9 100%);color:#fff;padding:0.8rem 2rem;border-radius:25px;text-decoration:none;font-weight:700;box-shadow:0 4px 15px rgba(0,184,148,0.3);transition:all 0.3s ease">
+      ⬇️ Télécharger LAN Messenger
+    </a>
+  </div>
+
+  <div style="background:#fff;padding:1.5rem;border-radius:12px;margin-bottom:1.5rem">
+    <h4 style="color:#00b894;margin:0 0 1rem 0;font-size:1.3rem">💬 Softros LAN Messenger</h4>
+    <p style="color:#2d3436;margin-bottom:1rem;line-height:1.6">Solution professionnelle de messagerie instantanée pour réseaux locaux d'entreprise.</p>
+    <a href="https://messenger.softros.com/downloads/" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#00b894 0%,#00cec9 100%);color:#fff;padding:0.8rem 2rem;border-radius:25px;text-decoration:none;font-weight:700;box-shadow:0 4px 15px rgba(0,184,148,0.3);transition:all 0.3s ease">
+      ⬇️ Télécharger Softros LAN Messenger
+    </a>
+  </div>
+
+  <div style="background:#fff;padding:1.5rem;border-radius:12px">
+    <h4 style="color:#00b894;margin:0 0 1rem 0;font-size:1.3rem">💬 BeeBEEP</h4>
+    <p style="color:#2d3436;margin-bottom:1rem;line-height:1.6">Logiciel gratuit et open source pour la messagerie sécurisée en réseau local.</p>
+    <a href="https://www.beebeep.net/download" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#00b894 0%,#00cec9 100%);color:#fff;padding:0.8rem 2rem;border-radius:25px;text-decoration:none;font-weight:700;box-shadow:0 4px 15px rgba(0,184,148,0.3);transition:all 0.3s ease">
+      ⬇️ Télécharger BeeBEEP
+    </a>
+  </div>
+</div>
+
+<h4>Avantages du partage en réseau</h4>
+<ul style="font-size:1.05rem;line-height:1.8">
+  <li>⚡ <strong>Rapidité</strong> - Transfert rapide des fichiers</li>
+  <li>🤝 <strong>Collaboration</strong> - Travail en équipe facilité</li>
+  <li>💾 <strong>Économie</strong> - Partage de ressources (imprimantes, stockage)</li>
+  <li>🔄 <strong>Synchronisation</strong> - Accès aux données à jour</li>
+  <li>💬 <strong>Communication</strong> - Messagerie instantanée en temps réel</li>
+</ul>
+
             `,
 
             unite3: `
@@ -949,6 +1053,14 @@
                         <small>© Unsplash</small>
                     </div>
                 </figure>
+
+                <div style="background:linear-gradient(135deg,#74b9ff 0%,#0984e3 100%);padding:1.5rem;border-radius:15px;margin:1.5rem 0;text-align:center;box-shadow:0 5px 20px rgba(9,132,227,0.3)">
+                    <p style="color:#fff;font-size:1.1rem;margin-bottom:1rem;font-weight:600">💾 Télécharger le logiciel Logo.net</p>
+                    <a href="https://drive.google.com/file/d/1vJLCWMPj6saztG738lT8dMyhjAZY96q_/view?usp=sharing" target="_blank" style="display:inline-block;background:#fff;color:#0984e3;padding:0.8rem 2rem;border-radius:25px;text-decoration:none;font-weight:700;box-shadow:0 4px 15px rgba(0,0,0,0.2);transition:all 0.3s ease">
+                        ⬇️ Télécharger Logo.net
+                    </a>
+                    <p style="color:#fff;font-size:0.9rem;margin-top:0.8rem;opacity:0.9">Logiciel gratuit pour apprendre la programmation Logo</p>
+                </div>
 
                 <div class="definition-box">
                     <p><strong>Programme :</strong> Suite d'instructions ordonnées qui transforment des données en résultat.</p>
@@ -1260,7 +1372,7 @@ CARRE 120</pre>
         function openLesson(unit) {
             const modal = document.getElementById('contentModal');
             const modalBody = document.getElementById('modalBody');
-            
+
             if (lessons[unit]) {
                 modalBody.innerHTML = lessons[unit];
                 modal.style.display = 'flex';
@@ -1279,7 +1391,7 @@ CARRE 120</pre>
             document.getElementById('contentModal').style.display = 'none';
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modal = document.getElementById('contentModal');
             if (event.target === modal) {
                 closeModal();
@@ -1306,4 +1418,5 @@ CARRE 120</pre>
         });
     </script>
 </body>
+
 </html>
