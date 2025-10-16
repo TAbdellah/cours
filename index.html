@@ -536,8 +536,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #6c5ce7 0%, #d63031 100%);
         }
-
-        
     </style>
 </head>
 
@@ -556,9 +554,10 @@
                     <li>Rappel sur le Système Informatique</li>
                 </ul>
                 <div class="button-group">
-            <button type="button" class="btn btn-lessons" onclick="openLesson('rappel')">📖 Voir la Leçon</button>
-            <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
-                class="coming-soon">Bientôt</span></button>
+                    <button type="button" class="btn btn-lessons" onclick="openLesson('rappel')">📖 Voir la
+                        Leçon</button>
+                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
+                            class="coming-soon">Bientôt</span></button>
                 </div>
             </div>
 
@@ -584,8 +583,10 @@
                     </li>
                 </ul>
                 <div class="button-group">
-                    <button type="button" class="btn btn-lessons" onclick="openLesson('unite1')">📖 Voir la Leçon</button>
-                    <button type="button" class="btn btn-exercises" onclick="openExercises('unite1')">📝 Exercices</button>
+                    <button type="button" class="btn btn-lessons" onclick="openLesson('unite1')">📖 Voir la
+                        Leçon</button>
+                    <button type="button" class="btn btn-exercises" onclick="openExercises('unite1')">📝
+                        Exercices</button>
                 </div>
             </div>
 
@@ -597,9 +598,10 @@
                     <li>Envoi / Réception de messages dans un réseau local</li>
                 </ul>
                 <div class="button-group">
-            <button type="button" class="btn btn-lessons" onclick="openLesson('unite2')">📖 Voir la Leçon</button>
-            <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
-                class="coming-soon">Bientôt</span></button>
+                    <button type="button" class="btn btn-lessons" onclick="openLesson('unite2')">📖 Voir la
+                        Leçon</button>
+                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
+                            class="coming-soon">Bientôt</span></button>
                 </div>
             </div>
 
@@ -618,9 +620,10 @@
                     </li>
                 </ul>
                 <div class="button-group">
-            <button type="button" class="btn btn-lessons" onclick="openLesson('unite3')">📖 Voir la Leçon</button>
-            <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
-                class="coming-soon">Bientôt</span></button>
+                    <button type="button" class="btn btn-lessons" onclick="openLesson('unite3')">📖 Voir la
+                        Leçon</button>
+                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
+                            class="coming-soon">Bientôt</span></button>
                 </div>
             </div>
 
@@ -639,9 +642,10 @@
                     </li>
                 </div>
                 <div class="button-group">
-            <button type="button" class="btn btn-lessons" onclick="openLesson('unite4')">📖 Voir la Leçon</button>
-            <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
-                class="coming-soon">Bientôt</span></button>
+                    <button type="button" class="btn btn-lessons" onclick="openLesson('unite4')">📖 Voir la
+                        Leçon</button>
+                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
+                            class="coming-soon">Bientôt</span></button>
                 </div>
             </div>
         </div>
@@ -677,19 +681,13 @@
 
         const lessons = {
             rappel: `
-                <h3>Rappel sur le Système Informatique</h3>
-
-                <figure class="lesson-figure">
-                    <img src="https://i.imgur.com/6Wx4aLY.png" alt="Ordinateur portable">
-                    <div class="figcaption">
-                        <small>Système Informatique</small>
-                    </div>
-                </figure>
+            <center>    <h3>Rappel sur le Système Informatique</h3></center>
+                <h4>Quelques définitions</h4>
 
                 <div class="definition-box">
-                    <p><strong>L'informatique</strong> vient de deux mots : <strong>information</strong> et <strong>automatique</strong>.</p>
-                    <p><strong>L'informatique</strong> est la science du traitement automatique des informations.</p>
-                    <p><strong>L'information</strong> est un ensemble de données ayant un sens.</p>
+                   <li> <p><strong>L'informatique</strong> vient de deux mots : <strong>information</strong> et <strong>automatique</strong>.</p></li>
+                  <li>  <p><strong>L'informatique</strong> est la science du traitement automatique des informations.</p></li>
+                 <li>   <p><strong>L'information</strong> est un ensemble de données ayant un sens.</p></li>
                 </div>
 
                 <h4>Les formes d'information</h4>
@@ -715,42 +713,21 @@
                 </div>
 
                 <h4>Le Traitement</h4>
-                <figure class="lesson-figure">
-                    <img src="https://i.imgur.com/L9b2g88.png" alt="Traitement des données">
-                    <div class="figcaption">
-                        <small>Traitement et analyse de données</small>
-                    </div>
-                </figure>
-
-                <p>Le traitement est une suite d'opérations effectuées pour passer d'un état initial à un état final.</p>
-
-                <ul style="font-size:1.05rem;line-height:1.8">
-                    <li>📋 <strong>Manuel</strong> - Effectué entièrement par l'humain</li>
-                    <li>⚙️ <strong>Semi-automatique</strong> - Combinaison homme-machine</li>
-                    <li>🤖 <strong>Automatique</strong> - Effectué entièrement par la machine</li>
-                </ul>
+                <div class="definition-box">
+                <p><strong>
+                Le traitement est une suite d'opérations effectuées pour passer d'un état initial à un état final.
+                </p></strong>
                 <figure class="lesson-figure">
                     <img src="https://i.imgur.com/8VRrXvl.png" alt="Types des traitements des données">
-                    <div class="figcaption">
-                        <small>Les types de traitement des données</small>
-                    </div>
                 </figure>
             `,
 
             unite1: `
-                <h3>Unité 1 : Environnement matériel d'un système informatique</h3>
-
-                <figure class="lesson-figure">
-                    <img src="https://i.imgur.com/MS8m051.jpeg" alt="Poste informatique">
-                    <div class="figcaption">
-                        <small>Configuration informatique complète</small>
-                        <small>© Unsplash</small>
-                    </div>
-                </figure>
+              <center>  <h3>Unité 1 : Environnement matériel d'un système informatique</h3></center>
 
                 <div class="definition-box">
-                    <p><strong>Un ordinateur</strong> est une machine de traitement automatique des informations.</p>
-                    <p>Il est composé d'une <strong>unité centrale</strong> et des <strong>périphériques</strong>.</p>
+                   <li> <p><strong>Un ordinateur</strong> est une machine de traitement automatique des informations.</p></li>
+                   <li> <p>Il est composé d'une <strong>unité centrale</strong> et des <strong>périphériques</strong>.</p></li>
                 </div>
 
                 <h4>Les périphériques et leurs fonctions</h4>
@@ -779,6 +756,14 @@
                         <img src="https://i.imgur.com/CN2u36z.png" alt="Haut-parleur">
                         <p><strong>Haut-parleur</strong><br>Diffuser le son</p>
                     </div>
+                    <div class="image-card">
+                        <img src="https://i.imgur.com/Ky47Zis.png" alt="vidéo-projecteur">
+                        <p><strong>Vidéo-projecteur</strong><br>Affiche le contenu numérique</p>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.imgur.com/513n03O.png" alt="Manette de jeu">
+                        <p><strong>Manette de jeu</strong><br>Contrôler le jeu.</p>
+                    </div>                    
                 </div>
 
                 <h4>🖥️ Schéma des Périphériques et l'Unité Centrale</h4>
@@ -951,62 +936,46 @@
                 </div>
 
                 <h4>Composants internes</h4>
-                <figure class="lesson-figure">
-                    <img src="https://i.imgur.com/OprTFaR.png" alt="Composants PC">
-                    <div class="figcaption">
-                        <small>Composants internes d'un ordinateur</small>
-                        <small>© Unsplash</small>
-                    </div>
-                </figure>
 
                 <div class="image-grid">
                     <div class="image-card">
                         <img src="https://i.imgur.com/7xmWMsb.png" alt="Carte mère">
-                        <p><strong>Carte mère</strong></p>
+                        <p><strong>Carte mère</strong>Connecte tous les composants</p>
                     </div>
                     <div class="image-card">
                         <img src="https://i.imgur.com/s7HPQ9D.png" alt="Processeur">
-                        <p><strong>Processeur (CPU)</strong></p>
+                        <p><strong>Processeur (CPU)</strong>Cerveau de l'ordinateur</p>
                     </div>
                     <div class="image-card">
                         <img src="https://i.imgur.com/uoT2YwA.png" alt="RAM">
-                        <p><strong>Mémoire RAM</strong></p>
+                        <p><strong>Mémoire RAM</strong>Stockage temporaire rapide</p>
                     </div>
                     <div class="image-card">
-                        <img src="https://i.imgur.com/9XrBBjX.png" alt="Disque dur">
-                        <p><strong>Disque dur / SSD</strong></p>
+                        <img src="https://i.imgur.com/IuC9JCt.png" alt="Disque dur">
+                        <p><strong>Disque SSD</strong>Stockage permanent</p>
                     </div>
                     <div class="image-card">
                         <img src="https://i.imgur.com/ck4CWKF.png" alt="Carte graphique">
-                        <p><strong>Carte graphique</strong></p>
+                        <p><strong>Carte graphique</strong>Traite les images</p>
                     </div>
                     <div class="image-card">
                         <img src="https://i.imgur.com/h4QTr00.png" alt="Carte réseau">
-                        <p><strong>Carte réseau</strong></p>
+                        <p><strong>Carte réseau</strong>Connexion au réseau</p>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.imgur.com/nCdAHs2.png" alt="Carte réseau">
+                        <p><strong>Alimentation</strong>Fournit l'énergie</p>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://i.imgur.com/sRSU7D3.png" alt="Carte réseau">
+                        <p><strong>Carte son</strong>Gère le son et l’audio de l’ordinateur</p>
                     </div>
                 </div>
 
-                <ul style="font-size:1.05rem;line-height:1.8;margin-top:1.5rem">
-                    <li>🔷 <strong>Carte mère</strong> - Connecte tous les composants</li>
-                    <li>🧠 <strong>Processeur (CPU)</strong> - Cerveau de l'ordinateur</li>
-                    <li>💾 <strong>Mémoire RAM</strong> - Stockage temporaire rapide</li>
-                    <li>💿 <strong>Disque dur / SSD</strong> - Stockage permanent</li>
-                    <li>🎮 <strong>Carte graphique</strong> - Traite les images</li>
-                    <li>🌐 <strong>Carte réseau</strong> - Connexion au réseau</li>
-                    <li>⚡ <strong>Alimentation</strong> - Fournit l'énergie</li>
-                </ul>
-
                 <h4>Système d'exploitation</h4>
-
-                <figure class="lesson-figure">
-                    <img src="https://i.imgur.com/iw7HZ4E.png" alt="Système d'exploitation">
-                    <div class="figcaption">
-                        <small>Interface système d'exploitation moderne</small>
-                        <small>© Unsplash</small>
-                    </div>
-                </figure>
-
-                <p>Un <strong>système d'exploitation</strong> est un logiciel de base qui gère le matériel d'un ordinateur.</p>
+                <div class="definition-box">
+                   <p>Un <strong>système d'exploitation</strong> est un logiciel de base qui gère le matériel d'un ordinateur.</p>
+                </div>
 
                 <div class="image-grid">
                     <div class="image-card">
@@ -1027,24 +996,479 @@
                     </div>
                 </div>
 
+
+
+                <center><h3>Les Éléments de Bureau, Dossiers et Fichiers</h3></center>
+
+<h4>I. Le Bureau (Desktop)</h4>
+
+<div class="definition-box">
+    <p><strong>Le Bureau</strong> est l'écran principal du système d'exploitation. C'est l'interface de base qui s'affiche après la connexion à l'ordinateur.</p>
+    <p>Il permet d'accéder aux applications, fichiers et fonctions du système.</p>
+</div>
+
+<figure class="lesson-figure">
+    <img src="https://i.imgur.com/cwhu6dv.png" alt="Bureau Windows" style="max-width: 100%; height: auto; border-radius: 10px;">
+    <div class="figcaption">
+        <small>Exemple du bureau Windows 11</small>
+    </div>
+</figure>
+
+<h4>II. Éléments principaux du Bureau</h4>
+
+<div style="background:linear-gradient(135deg,#fff9e6 0%,#fffacc 100%);border:3px solid #ffd700;border-radius:15px;padding:2rem;margin:2rem 0;box-shadow:0 8px 25px rgba(255,215,0,0.2);overflow-x:auto">
+
+  <table style="width:100%;border-collapse:collapse;background:transparent">
+    <thead>
+      <tr style="border-bottom:3px solid #6c5ce7">
+        <th style="padding:1rem;text-align:center;color:#6c5ce7;font-weight:700;font-size:1.1rem">Image</th>
+        <th style="padding:1rem;text-align:left;color:#6c5ce7;font-weight:700;font-size:1.1rem">Élément</th>
+        <th style="padding:1rem;text-align:left;color:#6c5ce7;font-weight:700;font-size:1.1rem">Fonction</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <!-- BARRE DES TÂCHES -->
+      <tr style="border-bottom:2px solid #e0e0e0">
+        <td style="padding:1.5rem;text-align:center;width:40%">
+          <img src="https://i.imgur.com/1XhTwEs.jpeg" alt="Barre des tâches" style="width:100%;max-width:400px;height:auto;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.15)">
+        </td>
+        <td style="padding:1.5rem;font-weight:700;color:#6c5ce7;font-size:1.05rem">📘 Barre des Tâches</td>
+        <td style="padding:1.5rem;color:#555;font-size:0.95rem">Gère les applications ouvertes et notifications</td>
+      </tr>
+
+      <!-- BOUTON DÉMARRER -->
+      <tr style="border-bottom:2px solid #e0e0e0">
+        <td style="padding:1.5rem;text-align:center">
+          <img src="https://i.imgur.com/D4m2GDy.jpeg" alt="Bouton Démarrer" style="width:15%;max-width:400px;height:auto;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.15)">
+        </td>
+        <td style="padding:1.5rem;font-weight:700;color:#00b894;font-size:1.05rem">⚙️ Bouton Démarrer</td>
+        <td style="padding:1.5rem;color:#555;font-size:0.95rem">Accès aux applications et paramètres</td>
+      </tr>
+
+      <!-- ICÔNES -->
+      <tr style="border-bottom:2px solid #e0e0e0">
+        <td style="padding:1.5rem;text-align:center">
+          <img src="https://i.imgur.com/Q73rihw.jpeg" alt="Icônes" style="width:100%;max-width:400px;height:auto;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.15)">
+        </td>
+        <td style="padding:1.5rem;font-weight:700;color:#fd79a8;font-size:1.05rem">🎯 Icônes du Bureau</td>
+        <td style="padding:1.5rem;color:#555;font-size:0.95rem">Raccourcis rapides vers fichiers et apps</td>
+      </tr>
+
+      <!-- ZONE DE NOTIFICATION -->
+      <tr style="border-bottom:2px solid #e0e0e0">
+        <td style="padding:1.5rem;text-align:center">
+          <img src="https://i.imgur.com/WdSJMA2.png" alt="Zone notification" style="width:100%;max-width:400px;height:auto;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.15)">
+        </td>
+        <td style="padding:1.5rem;font-weight:700;color:#e17055;font-size:1.05rem">🔔 Zone de Notification</td>
+        <td style="padding:1.5rem;color:#555;font-size:0.95rem">Affiche heure, volume, batterie, réseau</td>
+      </tr>
+
+      <!-- DOSSIERS -->
+      <tr style="border-bottom:2px solid #e0e0e0">
+        <td style="padding:1.5rem;text-align:center">
+          <img src="https://i.imgur.com/sNeRmPp.png" alt="Dossiers" style="width:100%;max-width:400px;height:auto;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.15)">
+        </td>
+        <td style="padding:1.5rem;font-weight:700;color:#0984e3;font-size:1.05rem">📂 Dossiers</td>
+        <td style="padding:1.5rem;color:#555;font-size:0.95rem">Organise et stocke fichiers et sous-dossiers</td>
+      </tr>
+
+      <!-- FICHIERS -->
+     <tr style="border-bottom:2px solid #e0e0e0">
+        <td style="padding:1.5rem;text-align:center">
+          <img src="https://i.imgur.com/x4rjWus.png" alt="Fichiers" style="width:100%;max-width:400px;height:auto;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.15)">
+        </td>
+        <td style="padding:1.5rem;font-weight:700;color:#0984e3;font-size:1.05rem">📄 Fichiers</td>
+        <td style="padding:1.5rem;color:#555;font-size:0.95rem">Contient données : texte, image, vidéo, app</td>
+      </tr>
+      <tr>
+
+    </tbody>
+  </table>
+
+</div>
+
+<h4>III. Fichiers et Dossiers</h4>
+
+<div class="definition-box">
+    <p><strong>Un fichier</strong> est l'unité de base de stockage de données. Il contient des informations (texte, images, vidéos, etc.)</p>
+    <p><strong>Un dossier (ou répertoire)</strong> est un conteneur qui peut ranger des fichiers et d'autres dossiers.</p>
+</div>
+
+<h4>📋 Structure des fichiers</h4>
+
+<div style="background: linear-gradient(135deg, #e3f5fd 0%, #f0f4ff 100%); border: 3px solid #90caf9; border-radius: 15px; padding: 2rem; margin: 2rem 0; box-shadow: 0 8px 30px rgba(100,181,246,0.25);">
+
+  <div style="display: flex; flex-direction: column; gap: 1.5rem; font-family: 'Courier New', monospace; color: #2d3436;">
+    
+    <div style="background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid #0984e3;">
+      <strong style="color: #0984e3;">📂 Documents/</strong>
+      <div style="margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.95rem;">
+        <div>📄 Rapport.docx</div>
+        <div>📄 Notes.txt</div>
+        <div style="color: #0984e3;">📂 Projets/</div>
+        <div style="margin-left: 1.5rem;">
+          <div>📄 Projet1.pdf</div>
+          <div>📄 Données.xlsx</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: #fff; padding: 1rem; border-radius: 8px; border-left: 4px solid #00b894;">
+      <strong style="color: #00b894;">📂 Images/</strong>
+      <div style="margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.95rem;">
+        <div>🖼️ Photo1.jpg</div>
+        <div>🖼️ Logo.png</div>
+        <div>🖼️ Screenshot.bmp</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<h4>📝 Caractéristiques d'un fichier</h4>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body style="margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px;">
+    <section>
+        <article>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; width: 100%;">
+                <header style="background: white; border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.2)';">
+                    <i class="fa-solid fa-file" style="font-size: 80px; margin-bottom: 20px; color: #667eea; display: block;"></i>
+                    <p style="color: #333; line-height: 1.6; font-size: 15px;"><strong style="color: #667eea; font-size: 18px; display: block; margin-bottom: 10px;">Nom du fichier</strong><br>Identifie le fichier (ex: Document.docx)</p>
+                </header>
+                <nav style="background: white; border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.2)';">
+                    <i class="fa-solid fa-tags" style="font-size: 80px; margin-bottom: 20px; color: #667eea; display: block;"></i>
+                    <p style="color: #333; line-height: 1.6; font-size: 15px;"><strong style="color: #667eea; font-size: 18px; display: block; margin-bottom: 10px;">Extension</strong><br>Indique le type (.txt, .pdf, .jpg, etc.)</p>
+                </nav>
+                <main style="background: white; border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.2)';">
+                    <i class="fa-solid fa-database" style="font-size: 80px; margin-bottom: 20px; color: #667eea; display: block;"></i>
+                    <p style="color: #333; line-height: 1.6; font-size: 15px;"><strong style="color: #667eea; font-size: 18px; display: block; margin-bottom: 10px;">Taille</strong><br>Exprimée en octets (B, KB, MB, GB)</p>
+                </main>
+                <footer style="background: white; border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.2)';">
+                    <i class="fas fa-calendar-alt" style="font-size: 80px; margin-bottom: 20px; color: #667eea; display: block;"></i>
+                    <p style="color: #333; line-height: 1.6; font-size: 15px;"><strong style="color: #667eea; font-size: 18px; display: block; margin-bottom: 10px;">Date de modification</strong><br>Quand le fichier a été créé/modifié</p>
+                </footer>
+            </div>
+        </article>
+    </section>
+
+
+<h4>Extensions de fichiers courantes</h4>
+
+<div style="background: linear-gradient(135deg, #fff9e6 0%, #fffacc 100%); border: 2px solid #ffd700; border-radius: 15px; padding: 2rem; margin: 2rem 0; box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);">
+
+  <table style="width: 100%; border-collapse: collapse; background: transparent;">
+    <thead>
+      <tr style="border-bottom: 3px solid #6c5ce7;">
+        <th style="padding: 1rem; text-align: left; color: #6c5ce7; font-weight: 700; font-size: 1rem;">Type</th>
+        <th style="padding: 1rem; text-align: left; color: #6c5ce7; font-weight: 700; font-size: 1rem;">Extensions</th>
+        <th style="padding: 1rem; text-align: left; color: #6c5ce7; font-weight: 700; font-size: 1rem;">Exemples</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">📄 Texte</td>
+        <td style="padding: 1.2rem; color: #555;">.txt, .doc, .docx, .odt</td>
+        <td style="padding: 1.2rem; color: #555;">Lettre.docx, Notes.txt</td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">📊 Tableur</td>
+        <td style="padding: 1.2rem; color: #555;">.xls, .xlsx, .csv, .ods</td>
+        <td style="padding: 1.2rem; color: #555;">Budget.xlsx, Données.csv</td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">🖼️ Image</td>
+        <td style="padding: 1.2rem; color: #555;">.jpg, .png, .gif, .bmp</td>
+        <td style="padding: 1.2rem; color: #555;">Photo.jpg, Logo.png</td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">🎵 Audio</td>
+        <td style="padding: 1.2rem; color: #555;">.mp3, .wav, .flac, .aac</td>
+        <td style="padding: 1.2rem; color: #555;">Chanson.mp3, Podcast.wav</td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">🎬 Vidéo</td>
+        <td style="padding: 1.2rem; color: #555;">.mp4, .avi, .mov, .mkv</td>
+        <td style="padding: 1.2rem; color: #555;">Film.mp4, Clip.avi</td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">📦 Compressé</td>
+        <td style="padding: 1.2rem; color: #555;">.zip, .rar, .7z, .tar</td>
+        <td style="padding: 1.2rem; color: #555;">Archive.zip, Dossier.rar</td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">📑 Présentation</td>
+        <td style="padding: 1.2rem; color: #555;">.ppt, .pptx, .odp</td>
+        <td style="padding: 1.2rem; color: #555;">Cours.pptx, Présentation.ppt</td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">📋 PDF</td>
+        <td style="padding: 1.2rem; color: #555;">.pdf</td>
+        <td style="padding: 1.2rem; color: #555;">Manuel.pdf, Certificat.pdf</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h4>🔧 Opérations courantes sur les fichiers</h4>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+    <div style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); padding: 1.5rem; border-radius: 12px; color: #fff; text-align: center; box-shadow: 0 5px 15px rgba(9, 132, 227, 0.3);">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">✏️</div>
+        <strong>Créer</strong>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Nouveau fichier ou dossier</p>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #55efc4 0%, #00b894 100%); padding: 1.5rem; border-radius: 12px; color: #fff; text-align: center; box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📋</div>
+        <strong>Copier</strong>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Dupliquer un fichier</p>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #fdcb6e 0%, #f39c12 100%); padding: 1.5rem; border-radius: 12px; color: #fff; text-align: center; box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">✂️</div>
+        <strong>Couper</strong>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Déplacer un fichier</p>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #fd79a8 0%, #d63031 100%); padding: 1.5rem; border-radius: 12px; color: #fff; text-align: center; box-shadow: 0 5px 15px rgba(214, 48, 49, 0.3);">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🗑️</div>
+        <strong>Supprimer</strong>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Effacer un fichier</p>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); padding: 1.5rem; border-radius: 12px; color: #fff; text-align: center; box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📝</div>
+        <strong>Renommer</strong>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Changer le nom d'un fichier</p>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 1.5rem; border-radius: 12px; color: #333; text-align: center; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔍</div>
+        <strong>Rechercher</strong>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Trouver un fichier</p>
+    </div>
+</div>
+
+<h4>💾 Unités de stockage</h4>
+
+<div style="text-align: center; margin: 2rem 0;">
+    <img src="https://i.imgur.com/udSmtv3.png" alt="Unités de mesure en informatique" style="max-width: 90%; border-radius: 12px; box-shadow: 0 6px 25px rgba(100,181,246,0.3);">
+</div>
+
+<div style="background: linear-gradient(135deg, #e3f5fd 0%, #f0f4ff 100%); border: 3px solid #90caf9; border-radius: 15px; padding: 2rem; margin: 2rem 0; box-shadow: 0 8px 30px rgba(100,181,246,0.25);">
+    <ul style="color: #2d3436; font-size: 1rem; line-height: 2; list-style: none; padding: 0;">
+        <li>🔹 <strong>1 octet (B)</strong> = 8 bits = 1 caractère</li>
+        <li>🔹 <strong>1 kilooctet (kB)</strong> = 1 000 B ≈ une page de texte</li>
+        <li>🔹 <strong>1 mégaoctet (MB)</strong> = 1 000 kB ≈ une chanson MP3</li>
+        <li>🔹 <strong>1 gigaoctet (GB)</strong> = 1 000 MB ≈ un film</li>
+        <li>🔹 <strong>1 téraoctet (TB)</strong> = 1 000 GB ≈ 200 films</li>
+    </ul>
+    <p style="color:#1565c0; font-style:italic; margin-top:1rem;">
+        📘 Ces valeurs suivent le <strong>Système International (SI)</strong>, basé sur des puissances de 10 (×1000).  
+        En informatique binaire, on utilise parfois 1024 (KiB, MiB…).
+    </p>
+</div>
+
+<h4>💡 À retenir</h4>
+
+<div style="background: linear-gradient(135deg, #fff9e6 0%, #fffacc 100%); border: 2px solid #ffd700; border-radius: 15px; padding: 1.5rem; margin: 2rem 0; box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);">
+    <ul style="color: #2d3436; font-size: 0.95rem; line-height: 1.8;">
+        <li>📌 Le <strong>bureau</strong> est l'interface principale de Windows</li>
+        <li>📌 Un <strong>fichier</strong> est une unité de données avec un nom et une extension</li>
+        <li>📌 Un <strong>dossier</strong> organise et regroupe les fichiers</li>
+        <li>📌 L'<strong>extension</strong> indique le type et le format du fichier</li>
+        <li>📌 L'<strong>organisation</strong> est essentielle pour retrouver facilement ses données</li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
                 <h4>Réseau local</h4>
 
-                <figure class="lesson-figure">
-                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=400&fit=crop" alt="Réseau">
-                    <div class="figcaption">
-                        <small>Équipement réseau et connexions</small>
-                        <small>© Unsplash</small>
-                    </div>
-                </figure>
+                <div class="definition-box">
+                   <p>Un <strong>Un réseau local</strong> relie plusieurs ordinateurs et appareils dans un même endroit (maison, école, entreprise).</p>
+                    ➡️ Il sert à partager des fichiers, une imprimante ou une connexion Internet.
+                </div>
 
-                <p><strong>Méthodes de connexion :</strong></p>
-                <ul style="font-size:1.05rem;line-height:1.8">
-                    <li>🔌 <strong>Filaire (Ethernet)</strong> - Plus stable et rapide</li>
-                    <li>📡 <strong>Sans-fil (Wi-Fi)</strong> - Plus flexible</li>
-                </ul>
+                <h4>Méthodes de connexion </h4>
+                    <ul style="font-family: Arial; font-size: 16px; line-height: 1.8;">
+                    <li style="color: #0077cc;">
+                        🔌 <strong>Filaire (Ethernet)</strong> – <span style="color: #333;">Connexion stable et rapide</span>
+                    </li>
+                    <li style="color: #009966;">
+                        📡 <strong>Sans fil (Wi-Fi)</strong> – <span style="color: #333;">Connexion flexible, sans câble</span>
+                    </li>
+                    <li style="color: #cc6600;">
+                        💡 <strong>Fibre optique</strong> – <span style="color: #333;">Très haute vitesse sur longue distance</span>
+                    </li>
+                    <li style="color: #9933cc;">
+                        🔷 <strong>Bluetooth</strong> – <span style="color: #333;">Connexion courte distance entre appareils</span>
+                    </li>
+                    </ul>
+
+                
+<h4>Topologie d'un réseau local</h4>
+
+<div style="background: linear-gradient(135deg, #fff9e6 0%, #fffacc 100%); border: 2px solid #ffd700; border-radius: 15px; padding: 2rem; margin: 2rem 0; box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);">
+
+  <table style="width: 100%; border-collapse: collapse; background: transparent;">
+    <thead>
+      <tr style="border-bottom: 3px solid #6c5ce7;">
+        <th style="padding: 1rem; text-align: left; color: #6c5ce7; font-weight: 700; font-size: 1rem;">Type</th>
+        <th style="padding: 1rem; text-align: left; color: #6c5ce7; font-weight: 700; font-size: 1rem;">Description</th>
+        <th style="padding: 1rem; text-align: center; color: #6c5ce7; font-weight: 700; font-size: 1rem;">Visualisation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- BUS -->
+      <tr style="border-bottom: 1px solid #e0e0e0; transition: all 0.3s ease;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">Bus</td>
+        <td style="padding: 1.2rem; color: #555;">Tous les PC sur un <strong>même câble</strong>. Simple mais limité en performance.</td>
+        <td style="padding: 1.2rem; text-align: center;">
+          <svg width="140" height="70" viewBox="0 0 180 90" xmlns="http://www.w3.org/2000/svg">
+            <line x1="10" y1="50" x2="170" y2="50" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="25" cy="25" r="7" fill="#FF6B6B"/>
+            <line x1="25" y1="32" x2="25" y2="48" stroke="#FF6B6B" stroke-width="2"/>
+            <circle cx="90" cy="25" r="7" fill="#FF6B6B"/>
+            <line x1="90" y1="32" x2="90" y2="48" stroke="#FF6B6B" stroke-width="2"/>
+            <circle cx="155" cy="25" r="7" fill="#FF6B6B"/>
+            <line x1="155" y1="32" x2="155" y2="48" stroke="#FF6B6B" stroke-width="2"/>
+          </svg>
+        </td>
+      </tr>
+      
+      <!-- ÉTOILE -->
+      <tr style="border-bottom: 1px solid #e0e0e0; transition: all 0.3s ease;">
+        <td style="padding: 1.2rem; color: #00b894; font-weight: 700;">Étoile</td>
+        <td style="padding: 1.2rem; color: #555;">Chaque PC relié au <strong>centre</strong>. Très utilisée, performante et facile à gérer.</td>
+        <td style="padding: 1.2rem; text-align: center;">
+          <svg width="140" height="70" viewBox="0 0 180 90" xmlns="http://www.w3.org/2000/svg">
+            <rect x="75" y="38" width="30" height="24" fill="#00b894" rx="4"/>
+            <text x="90" y="54" text-anchor="middle" font-size="10" fill="white" font-weight="bold">SW</text>
+            <line x1="90" y1="38" x2="90" y2="15" stroke="#00b894" stroke-width="2"/>
+            <line x1="105" y1="45" x2="155" y2="25" stroke="#00b894" stroke-width="2"/>
+            <line x1="105" y1="57" x2="155" y2="70" stroke="#00b894" stroke-width="2"/>
+            <line x1="75" y1="57" x2="25" y2="70" stroke="#00b894" stroke-width="2"/>
+            <line x1="75" y1="45" x2="25" y2="25" stroke="#00b894" stroke-width="2"/>
+            <circle cx="90" cy="10" r="6" fill="#00b894"/>
+            <circle cx="160" cy="25" r="6" fill="#00b894"/>
+            <circle cx="160" cy="70" r="6" fill="#00b894"/>
+            <circle cx="20" cy="70" r="6" fill="#00b894"/>
+            <circle cx="20" cy="25" r="6" fill="#00b894"/>
+          </svg>
+        </td>
+      </tr>
+      
+      <!-- ANNEAU -->
+      <tr style="border-bottom: 1px solid #e0e0e0; transition: all 0.3s ease;">
+        <td style="padding: 1.2rem; color: #0984e3; font-weight: 700;">Anneau</td>
+        <td style="padding: 1.2rem; color: #555;">Les données <strong>tournent en boucle</strong>. Fiable mais moins flexible.</td>
+        <td style="padding: 1.2rem; text-align: center;">
+          <svg width="140" height="70" viewBox="0 0 180 90" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="45" r="30" fill="none" stroke="#0984e3" stroke-width="2"/>
+            <circle cx="90" cy="18" r="6" fill="#0984e3"/>
+            <circle cx="120" cy="28" r="6" fill="#0984e3"/>
+            <circle cx="120" cy="62" r="6" fill="#0984e3"/>
+            <circle cx="90" cy="72" r="6" fill="#0984e3"/>
+            <circle cx="60" cy="62" r="6" fill="#0984e3"/>
+            <circle cx="60" cy="28" r="6" fill="#0984e3"/>
+          </svg>
+        </td>
+      </tr>
+      
+      <!-- MAILLÉE -->
+      <tr style="border-bottom: 1px solid #e0e0e0; transition: all 0.3s ease;">
+        <td style="padding: 1.2rem; color: #d63031; font-weight: 700;">Maillée</td>
+        <td style="padding: 1.2rem; color: #555;">Chaque PC relié à <strong>plusieurs autres</strong>. Très redondante et sécurisée.</td>
+        <td style="padding: 1.2rem; text-align: center;">
+          <svg width="140" height="70" viewBox="0 0 180 90" xmlns="http://www.w3.org/2000/svg">
+            <line x1="30" y1="20" x2="150" y2="20" stroke="#d63031" stroke-width="1.5"/>
+            <line x1="30" y1="20" x2="90" y2="75" stroke="#d63031" stroke-width="1.5"/>
+            <line x1="150" y1="20" x2="90" y2="75" stroke="#d63031" stroke-width="1.5"/>
+            <line x1="30" y1="75" x2="150" y2="75" stroke="#d63031" stroke-width="1.5"/>
+            <circle cx="30" cy="20" r="6" fill="#d63031"/>
+            <circle cx="150" cy="20" r="6" fill="#d63031"/>
+            <circle cx="90" cy="75" r="6" fill="#d63031"/>
+            <circle cx="30" cy="75" r="6" fill="#d63031"/>
+            <circle cx="150" cy="75" r="6" fill="#d63031"/>
+          </svg>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h4>⚙️ Équipements réseau</h4>
+
+<div style="background: linear-gradient(135deg, #fff9e6 0%, #fffacc 100%); border: 2px solid #ffd700; border-radius: 15px; padding: 2rem; margin: 2rem 0; box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);">
+
+  <table style="width: 100%; border-collapse: collapse; background: transparent;">
+    <thead>
+      <tr style="border-bottom: 3px solid #6c5ce7;">
+        <th style="padding: 1rem; text-align: left; color: #6c5ce7; font-weight: 700; font-size: 1rem;">Équipement</th>
+        <th style="padding: 1rem; text-align: left; color: #6c5ce7; font-weight: 700; font-size: 1rem;">Rôle</th>
+        <th style="padding: 1rem; text-align: center; color: #6c5ce7; font-weight: 700; font-size: 1rem;">Visualisation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">🖥️ Carte réseau</td>
+        <td style="padding: 1.2rem; color: #555;">Relie le PC au réseau</td>
+        <td style="padding: 1.2rem; text-align: center;"><img src="https://i.imgur.com/0NreIUp.png" alt="Carte réseau" style="max-width: 70px; height: auto;"></td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">📌 Câble RJ45</td>
+        <td style="padding: 1.2rem; color: #555;">Transporte les données entre appareils</td>
+        <td style="padding: 1.2rem; text-align: center;"><img src="https://i.imgur.com/DWIKOxS.png" alt="Câble RJ45" style="max-width: 70px; height: auto;"></td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">📡 Switch</td>
+        <td style="padding: 1.2rem; color: #555;">Relie plusieurs ordinateurs dans un réseau en étoile</td>
+        <td style="padding: 1.2rem; text-align: center;"><img src="https://i.imgur.com/oZRGXXp.png" alt="Switch" style="max-width: 70px; height: auto;"></td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">🌐 Routeur</td>
+        <td style="padding: 1.2rem; color: #555;">Connecte le réseau à Internet</td>
+        <td style="padding: 1.2rem; text-align: center;"><img src="https://i.imgur.com/Coi6Qjk.png" alt="Routeur" style="max-width: 70px; height: auto;"></td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">📶 Point d'accès</td>
+        <td style="padding: 1.2rem; color: #555;">Fournit une connexion sans fil (WiFi)</td>
+        <td style="padding: 1.2rem; text-align: center;"><img src="https://i.imgur.com/dMeZPwV.png" alt="Point d'accès" style="max-width: 70px; height: auto;"></td>
+      </tr>
+      
+      <tr style="border-bottom: 1px solid #e0e0e0;">
+        <td style="padding: 1.2rem; color: #6c5ce7; font-weight: 700;">📦 Box Internet</td>
+        <td style="padding: 1.2rem; color: #555;">Fournit Internet à la maison (modem + routeur)</td>
+        <td style="padding: 1.2rem; text-align: center;"><img src="https://i.imgur.com/vhD1Kp2.png" alt="Box Internet" style="max-width: 70px; height: auto;"></td>
+      </tr>
+    </tbody>
+  </table>
             `,
 
-          unite2: `
+            unite2: `
 <h3>Unité 2 : Échange d'informations</h3>
 
 <figure class="lesson-figure">
