@@ -2058,15 +2058,31 @@ CARRE 120</pre>
             `
         };
 
-        function openLesson(unit) {
-            const modal = document.getElementById('contentModal');
-            const modalBody = document.getElementById('modalBody');
+// REMPLACER la fonction openLesson existante par celle-ci
 
-            if (lessons[unit]) {
-                modalBody.innerHTML = lessons[unit];
-                modal.style.display = 'flex';
-            }
-        }
+function openLesson(unit) {
+    const modal = document.getElementById('contentModal');
+    const modalBody = document.getElementById('modalBody');
+    let content = lessons[unit];
+
+    if (content) {
+        // Ajouter le bouton Trace Écrit à la fin
+        const traceEcritLinks = {
+            rappel: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=rappel',
+            unite1: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=unite1',
+            unite2: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=unite2',
+            unite3: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=unite3',
+            unite4: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=unite4'
+        };
+
+        content += `<div style="margin-top: 3rem; padding-top: 2rem; border-top: 3px solid #fdcb6e; text-align: center;">
+            <a href="${traceEcritLinks[unit]}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #fd79a8 0%, #d63031 100%); color: white; padding: 1.2rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 6px 20px rgba(214, 48, 49, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(214, 48, 49, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(214, 48, 49, 0.3)';">📝 Voir la Trace Écrit →</a>
+        </div>`;
+
+        modalBody.innerHTML = content;
+        modal.style.display = 'flex';
+    }
+}
 
         function openExercises(unit) {
             if (exercisesLinks[unit]) {
@@ -2087,6 +2103,39 @@ CARRE 120</pre>
         function closeModal() {
             document.getElementById('contentModal').style.display = 'none';
         }
+
+const traceEcritLinks = {
+    rappel: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=rappel',
+    unite1: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=unite1',
+    unite2: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=unite2',
+    unite3: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=unite3',
+    unite4: 'https://tabdellah.github.io/cours/trace_ecrit.html?unit=unite4'
+};
+
+// Créer les leçons avec bouton
+const lessonsWithButtonsNew = {
+    rappel: lessons.rappel + `<div style="margin-top: 3rem; padding-top: 2rem; border-top: 3px solid #fdcb6e; text-align: center;"><a href="${traceEcritLinks.rappel}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #fd79a8 0%, #d63031 100%); color: white; padding: 1.2rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 6px 20px rgba(214, 48, 49, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(214, 48, 49, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(214, 48, 49, 0.3)';">📝 Voir la Trace Écrit →</a></div>`,
+    unite1: lessons.unite1 + `<div style="margin-top: 3rem; padding-top: 2rem; border-top: 3px solid #fdcb6e; text-align: center;"><a href="${traceEcritLinks.unite1}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #fd79a8 0%, #d63031 100%); color: white; padding: 1.2rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 6px 20px rgba(214, 48, 49, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(214, 48, 49, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(214, 48, 49, 0.3)';">📝 Voir la Trace Écrit →</a></div>`,
+    unite2: lessons.unite2 + `<div style="margin-top: 3rem; padding-top: 2rem; border-top: 3px solid #fdcb6e; text-align: center;"><a href="${traceEcritLinks.unite2}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #fd79a8 0%, #d63031 100%); color: white; padding: 1.2rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 6px 20px rgba(214, 48, 49, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(214, 48, 49, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(214, 48, 49, 0.3)';">📝 Voir la Trace Écrit →</a></div>`,
+    unite3: lessons.unite3 + `<div style="margin-top: 3rem; padding-top: 2rem; border-top: 3px solid #fdcb6e; text-align: center;"><a href="${traceEcritLinks.unite3}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #fd79a8 0%, #d63031 100%); color: white; padding: 1.2rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 6px 20px rgba(214, 48, 49, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(214, 48, 49, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(214, 48, 49, 0.3)';">📝 Voir la Trace Écrit →</a></div>`,
+    unite4: lessons.unite4 + `<div style="margin-top: 3rem; padding-top: 2rem; border-top: 3px solid #fdcb6e; text-align: center;"><a href="${traceEcritLinks.unite4}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #fd79a8 0%, #d63031 100%); color: white; padding: 1.2rem 2.5rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 6px 20px rgba(214, 48, 49, 0.3); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 30px rgba(214, 48, 49, 0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(214, 48, 49, 0.3)';">📝 Voir la Trace Écrit →</a></div>`
+};
+
+// Modifier openLesson pour utiliser les leçons avec boutons
+const originalOpenLesson2 = window.openLesson;
+window.openLesson = function(unit) {
+    const modal = document.getElementById('contentModal');
+    const modalBody = document.getElementById('modalBody');
+
+    if (lessonsWithButtonsNew[unit]) {
+        modalBody.innerHTML = lessonsWithButtonsNew[unit];
+        modal.style.display = 'flex';
+    } else if (lessons[unit]) {
+        modalBody.innerHTML = lessons[unit];
+        modal.style.display = 'flex';
+    }
+};
+
 
         window.onclick = function (event) {
             const modal = document.getElementById('contentModal');
@@ -2113,25 +2162,11 @@ CARRE 120</pre>
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(card);
         });
+
+
+
     </script>
-    <script>
-        // Ajoute loading="lazy" à toutes les images qui n'ont pas déjà l'attribut loading
-        (function () {
-            try {
-                document.addEventListener('DOMContentLoaded', function () {
-                    var imgs = document.getElementsByTagName('img');
-                    for (var i = 0; i < imgs.length; i++) {
-                        var img = imgs[i];
-                        if (!img.hasAttribute('loading')) {
-                            img.setAttribute('loading', 'lazy');
-                        }
-                    }
-                });
-            } catch (e) {
-                /* noop */
-            }
-        })();
-    </script>
+
 </body>
 
 </html>
