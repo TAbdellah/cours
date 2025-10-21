@@ -251,7 +251,7 @@
         <div id="traceContent"></div>
 
         <div class="buttons">
-            <button class="btn btn-back" onclick="closeTraceEcrit()">← Fermer</button>
+            <button class="btn btn-back" onclick="closeTraceEcrit()">← Retour à la leçon</button>
             <button class="btn btn-print" onclick="window.print()">🖨️ Imprimer</button>
         </div>
     </div>
@@ -581,15 +581,11 @@ FIN</pre>
             }
         }
 
-        function closeTraceEcrit() {
-            // Si la page a été ouverte depuis une autre page
-            if (window.opener) {
-                window.close();
-            } else {
-                // Sinon, retourner à la page précédente
-                history.back();
-            }
-        }
+
+function closeTraceEcrit() {
+    // Redirection vers votre site
+    window.location.href = 'https://tabdellah.github.io/cours/';
+}
 
         // Afficher le contenu au chargement
         document.addEventListener('DOMContentLoaded', displayTrace);
