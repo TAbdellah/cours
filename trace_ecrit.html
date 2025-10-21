@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trace Écrit - Système Informatique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ffeaa7 100%);
+            min-height: 100vh;
+            color: #2d3436;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 50%, #fd79a8 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(108, 92, 231, 0.3);
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        header p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+        }
+
+        .trace-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 8px 30px rgba(253, 203, 110, 0.3);
+            border: 3px solid #fdcb6e;
+            margin-bottom: 3rem;
+        }
+
+        .trace-content h2 {
+            color: #6c5ce7;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #fdcb6e;
+            padding-bottom: 1rem;
+        }
+
+        .trace-content h3 {
+            color: #fd79a8;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .trace-content p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .trace-content ul, .trace-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .trace-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .definition-box {
+            background: linear-gradient(to right, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 5px solid #00b894;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0, 184, 148, 0.2);
+        }
+
+        .definition-box strong {
+            color: #00695c;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #fff9e6 0%, #fffacc 100%);
+            border: 2px solid #ffd700;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .key-points h4 {
+            color: #6c5ce7;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .key-points ul {
+            margin-left: 2rem;
+        }
+
+        .key-points li {
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        table th {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .print-section {
+            page-break-inside: avoid;
+            margin-bottom: 2rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 180px;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-back {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+        }
+
+        .btn-back:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(9, 132, 227, 0.4);
+        }
+
+        .btn-print {
+            background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+            color: white;
+        }
+
+        .btn-print:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 184, 148, 0.4);
+        }
+
+        .drawing-space {
+            border: 2px dashed #6c5ce7;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+            margin: 2rem 0;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #6c5ce7;
+            font-style: italic;
+        }
+
+        .schema {
+            border: 2px solid #6c5ce7;
+            border-radius: 12px;
+            padding: 2rem;
+            background: white;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .buttons {
+                display: none;
+            }
+
+            .trace-content {
+                box-shadow: none;
+                border: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .trace-content {
+                padding: 1.5rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Trace Écrit</h1>
+            <p>L'essentiel à retenir dans votre cahier</p>
+        </header>
+
+        <div id="traceContent"></div>
+
+        <div class="buttons">
+            <button class="btn btn-back" onclick="goBack()">← Retour à la leçon</button>
+            <button class="btn btn-print" onclick="window.print()">🖨️ Imprimer</button>
+        </div>
+    </div>
+
+    <script>
+        const traces = {
+            rappel: `
+                <div class="trace-content">
+                    <h2>📚 Rappel sur le Système Informatique</h2>
+                    
+                    <h3>1️⃣ Définitions essentielles</h3>
+                    <div class="definition-box">
+                        <p><strong>Informatique :</strong> Science du traitement automatique des informations</p>
+                        <p><strong>Information :</strong> Ensemble de données ayant un sens</p>
+                    </div>
+
+                    <h3>2️⃣ Les formes d'information</h3>
+                    <ul>
+                        <li>📄 <strong>Texte</strong> - Caractères et mots</li>
+                        <li>🖼️ <strong>Image</strong> - Représentation visuelle</li>
+                        <li>🔊 <strong>Son</strong> - Données audio</li>
+                        <li>🎥 <strong>Vidéo</strong> - Séquences d'images</li>
+                    </ul>
+
+                    <h3>3️⃣ Le traitement</h3>
+                    <p><strong>Le traitement</strong> est une suite d'opérations permettant de passer d'un état initial à un état final.</p>
+
+                    <div class="key-points">
+                        <h4>✏️ À retenir</h4>
+                        <ul>
+                            <li>L'informatique traite les informations automatiquement</li>
+                            <li>Une information peut être sous plusieurs formes</li>
+                            <li>Le traitement transforme les données en résultats</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+
+            unite1: `
+                <div class="trace-content">
+                    <h2>💻 Unité 1 : Environnement Système Informatique</h2>
+                    
+                    <h3>1️⃣ Structure d'un ordinateur</h3>
+                    <div class="definition-box">
+                        <p><strong>Un ordinateur</strong> = Unité centrale + Périphériques</p>
+                    </div>
+
+                    <h3>2️⃣ Périphériques de base</h3>
+                    
+                    <h4>🔵 Entrée (Input)</h4>
+                    <ul>
+                        <li>⌨️ Clavier - Saisir du texte</li>
+                        <li>🖱️ Souris - Pointer et cliquer</li>
+                        <li>🎮 Manette - Contrôler le jeu</li>
+                        <li>🎤 Microphone - Capturer l'audio</li>
+                    </ul>
+
+                    <h4>🔴 Sortie (Output)</h4>
+                    <ul>
+                        <li>🖥️ Écran - Afficher les informations</li>
+                        <li>🔊 Haut-parleurs - Diffuser le son</li>
+                        <li>🖨️ Imprimante - Imprimer sur papier</li>
+                        <li>🎧 Casque - Écouter l'audio</li>
+                    </ul>
+
+                    <h3>3️⃣ Composants internes</h3>
+                    <table>
+                        <tr>
+                            <th>Composant</th>
+                            <th>Fonction</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Carte mère</strong></td>
+                            <td>Connecte tous les composants</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Processeur (CPU)</strong></td>
+                            <td>Cerveau de l'ordinateur - exécute les instructions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RAM</strong></td>
+                            <td>Mémoire temporaire et rapide</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Disque SSD</strong></td>
+                            <td>Stockage permanent des données</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Carte graphique</strong></td>
+                            <td>Traite les images et affichage</td>
+                        </tr>
+                    </table>
+
+                    <h3>4️⃣ Système d'exploitation</h3>
+                    <p><strong>Définition :</strong> Logiciel de base qui gère le matériel d'un ordinateur</p>
+                    <ul>
+                        <li>🪟 Windows</li>
+                        <li>🐧 Linux</li>
+                        <li>🍎 macOS</li>
+                        <li>📱 Android / iOS</li>
+                    </ul>
+
+                    <h3>5️⃣ Bureau et fichiers</h3>
+                    
+                    <h4>Le Bureau (Desktop)</h4>
+                    <p>Écran principal après connexion qui permet d'accéder aux applications et fichiers</p>
+
+                    <h4>Fichiers et Dossiers</h4>
+                    <ul>
+                        <li><strong>Fichier :</strong> Unité de base de stockage (nom + extension)</li>
+                        <li><strong>Dossier :</strong> Conteneur pour organiser les fichiers</li>
+                        <li><strong>Extension :</strong> Indique le type (.txt, .pdf, .jpg, etc.)</li>
+                    </ul>
+
+                    <h3>6️⃣ Unités de stockage</h3>
+                    <ul>
+                        <li>🔹 <strong>1 octet (B)</strong> = 8 bits = 1 caractère</li>
+                        <li>🔹 <strong>1 kilooctet (kB)</strong> = 1 000 B ≈ page de texte</li>
+                        <li>🔹 <strong>1 mégaoctet (MB)</strong> = 1 000 kB ≈ chanson MP3</li>
+                        <li>🔹 <strong>1 gigaoctet (GB)</strong> = 1 000 MB ≈ film</li>
+                        <li>🔹 <strong>1 téraoctet (TB)</strong> = 1 000 GB ≈ 200 films</li>
+                    </ul>
+
+                    <h3>7️⃣ Réseau local (LAN)</h3>
+                    <p><strong>Définition :</strong> Relie plusieurs ordinateurs dans un même endroit pour partager fichiers et ressources</p>
+
+                    <h4>Méthodes de connexion</h4>
+                    <ul>
+                        <li>🔌 Filaire (Ethernet) - Stable et rapide</li>
+                        <li>📡 Sans fil (Wi-Fi) - Flexible, sans câble</li>
+                        <li>🌐 Fibre optique - Très haut débit</li>
+                        <li>📶 Bluetooth - Courte distance</li>
+                    </ul>
+
+                    <h4>Topologies réseau</h4>
+                    <ul>
+                        <li><strong>Bus :</strong> Tous les PC sur un même câble</li>
+                        <li><strong>Étoile :</strong> Chaque PC relié au centre (plus utilisée)</li>
+                        <li><strong>Anneau :</strong> Données tournent en boucle</li>
+                        <li><strong>Maillée :</strong> Chaque PC relié à plusieurs autres</li>
+                    </ul>
+
+                    <div class="key-points">
+                        <h4>✏️ À retenir</h4>
+                        <ul>
+                            <li>Un ordinateur = unité centrale + périphériques</li>
+                            <li>Périphériques d'entrée : clavier, souris, etc.</li>
+                            <li>Périphériques de sortie : écran, imprimante, etc.</li>
+                            <li>Système d'exploitation = logiciel de gestion du matériel</li>
+                            <li>Fichier = données avec un nom et extension</li>
+                            <li>Réseau LAN = plusieurs PC connectés ensemble</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+
+            unite2: `
+                <div class="trace-content">
+                    <h2>🌐 Unité 2 : Échange d'Informations</h2>
+                    
+                    <h3>1️⃣ Partage de fichiers en réseau</h3>
+                    <div class="definition-box">
+                        <p><strong>Dossier partagé :</strong> Dossier accessible à d'autres ordinateurs du réseau</p>
+                        <p><strong>Important :</strong> Pour partager un fichier, il doit être dans un dossier partagé</p>
+                    </div>
+
+                    <h3>2️⃣ Étapes pour partager un dossier</h3>
+                    <ol>
+                        <li>🖱️ Clic droit sur le dossier</li>
+                        <li>⚙️ Propriétés → Onglet "Partage"</li>
+                        <li>✅ Activer le partage</li>
+                        <li>🔐 Définir les autorisations</li>
+                    </ol>
+
+                    <h3>3️⃣ Accéder aux fichiers partagés</h3>
+                    <ul>
+                        <li>📂 <strong>Explorateur :</strong> Accès direct</li>
+                        <li>🌐 <strong>Adresse réseau :</strong> \\\\ordinateur\\dossier</li>
+                        <li>💾 <strong>Lecteur mappé :</strong> Accès permanent</li>
+                    </ul>
+
+                    <h3>4️⃣ Messagerie instantanée en LAN</h3>
+                    <p><strong>Définition :</strong> Permet d'envoyer et recevoir des messages instantanément sur le réseau</p>
+
+                    <h4>Logiciels de messagerie LAN</h4>
+                    <ul>
+                        <li>💬 <strong>LAN Messenger</strong> - Application de chat simple</li>
+                        <li>💬 <strong>Softros LAN Messenger</strong> - Solution professionnelle</li>
+                        <li>💬 <strong>BeeBEEP</strong> - Logiciel gratuit et open source</li>
+                    </ul>
+
+                    <h3>5️⃣ Avantages du partage en réseau</h3>
+                    <ul>
+                        <li>⚡ <strong>Rapidité</strong> - Transfert rapide des fichiers</li>
+                        <li>🤝 <strong>Collaboration</strong> - Travail en équipe facilitée</li>
+                        <li>💾 <strong>Économie</strong> - Partage de ressources (imprimantes, disques)</li>
+                        <li>📄 <strong>Synchronisation</strong> - Accès aux données à jour</li>
+                        <li>💬 <strong>Communication</strong> - Messages en temps réel</li>
+                    </ul>
+
+                    <div class="key-points">
+                        <h4>✏️ À retenir</h4>
+                        <ul>
+                            <li>Les fichiers doivent être dans un dossier partagé</li>
+                            <li>Trois méthodes pour accéder aux fichiers partagés</li>
+                            <li>La messagerie LAN permet la communication instantanée</li>
+                            <li>Le partage améliore la collaboration et l'efficacité</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+
+            unite3: `
+                <div class="trace-content">
+                    <h2>📊 Unité 3 : Tableurs</h2>
+                    
+                    <h3>1️⃣ Définition du tableur</h3>
+                    <div class="definition-box">
+                        <p><strong>Un tableur</strong> = Logiciel de calcul et traitement de données en tableau</p>
+                        <p>Utilisation : budgets, graphiques, analyses de données</p>
+                    </div>
+
+                    <h3>2️⃣ Exemples de tableurs</h3>
+                    <ul>
+                        <li>📑 Microsoft Excel</li>
+                        <li>📑 Google Sheets</li>
+                        <li>📑 LibreOffice Calc</li>
+                    </ul>
+
+                    <h3>3️⃣ Structure d'une feuille</h3>
+                    <ul>
+                        <li>📊 <strong>Lignes :</strong> 1 048 576 numérotées (1, 2, 3...)</li>
+                        <li>📈 <strong>Colonnes :</strong> 16 384 (A, B, C... XFD)</li>
+                        <li>📋 <strong>Cellule :</strong> Intersection ligne/colonne (Ex: A1, B5, C10)</li>
+                    </ul>
+
+                    <h3>4️⃣ Formules de base</h3>
+                    <p><strong>Les formules commencent par = ou +</strong></p>
+                    <table>
+                        <tr>
+                            <th>Formule</th>
+                            <th>Opération</th>
+                            <th>Exemple</th>
+                        </tr>
+                        <tr>
+                            <td>=A1+B1</td>
+                            <td>Addition</td>
+                            <td>=10+5 = 15</td>
+                        </tr>
+                        <tr>
+                            <td>=A1-B1</td>
+                            <td>Soustraction</td>
+                            <td>=10-5 = 5</td>
+                        </tr>
+                        <tr>
+                            <td>=A1*B1</td>
+                            <td>Multiplication</td>
+                            <td>=10*5 = 50</td>
+                        </tr>
+                        <tr>
+                            <td>=A1/B1</td>
+                            <td>Division</td>
+                            <td>=10/5 = 2</td>
+                        </tr>
+                    </table>
+
+                    <h3>5️⃣ Fonctions principales</h3>
+                    <ul>
+                        <li><strong>=SOMME(A1:A10)</strong> - Additionne une plage</li>
+                        <li><strong>=MOYENNE(A1:A10)</strong> - Calcule la moyenne</li>
+                        <li><strong>=MIN(A1:A10)</strong> - Trouve la valeur minimale</li>
+                        <li><strong>=MAX(A1:A10)</strong> - Trouve la valeur maximale</li>
+                        <li><strong>=COMPTE(A1:A10)</strong> - Compte les cellules remplies</li>
+                    </ul>
+
+                    <h3>6️⃣ Types de graphiques</h3>
+                    <ul>
+                        <li>📊 <strong>Histogramme</strong> - Comparer des valeurs</li>
+                        <li>📈 <strong>Courbe</strong> - Évolution dans le temps</li>
+                        <li>🥧 <strong>Secteur (Camembert)</strong> - Répartition en pourcentages</li>
+                        <li>📉 <strong>Barres</strong> - Comparaisons horizontales</li>
+                    </ul>
+
+                    <h3>7️⃣ Opérations courantes</h3>
+                    <ul>
+                        <li>✏️ Créer une nouvelle feuille</li>
+                        <li>📋 Copier/coller des données</li>
+                        <li>🔄 Trier les données</li>
+                        <li>🔍 Filtrer les données</li>
+                        <li>🎨 Mettre en forme (couleurs, police)</li>
+                        <li>📊 Créer un graphique</li>
+                    </ul>
+
+                    <div class="key-points">
+                        <h4>✏️ À retenir</h4>
+                        <ul>
+                            <li>Tableur = Tableau pour calculs et données</li>
+                            <li>Cellule = Intersection ligne/colonne</li>
+                            <li>Formule = Commande de calcul (commence par =)</li>
+                            <li>Fonction = Calcul prédéfini (SOMME, MOYENNE, etc.)</li>
+                            <li>Graphique = Visualisation des données</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+
+            unite4: `
+                <div class="trace-content">
+                    <h2>🐢 Unité 4 : Programmation Logo</h2>
+                    
+                    <h3>1️⃣ Définitions</h3>
+                    <div class="definition-box">
+                        <p><strong>Programme :</strong> Suite d'instructions ordonnées transformant des données en résultat</p>
+                        <p><strong>Programmation :</strong> Création de programmes avec logique et rigueur</p>
+                        <p><strong>LOGO :</strong> Langage utilisant une tortue graphique pour dessiner</p>
+                    </div>
+
+                    <h3>2️⃣ Primitives de base - Déplacement</h3>
+                    <table>
+                        <tr>
+                            <th>Commande</th>
+                            <th>Fonction</th>
+                            <th>Exemple</th>
+                        </tr>
+                        <tr>
+                            <td>AV n</td>
+                            <td>Avancer de n pas</td>
+                            <td>AV 100</td>
+                        </tr>
+                        <tr>
+                            <td>RE n</td>
+                            <td>Reculer de n pas</td>
+                            <td>RE 50</td>
+                        </tr>
+                        <tr>
+                            <td>TD x</td>
+                            <td>Tourner à droite de x°</td>
+                            <td>TD 90</td>
+                        </tr>
+                        <tr>
+                            <td>TG x</td>
+                            <td>Tourner à gauche de x°</td>
+                            <td>TG 45</td>
+                        </tr>
+                    </table>
+
+                    <h3>3️⃣ Commandes du stylo</h3>
+                    <ul>
+                        <li>✏️ <strong>LC</strong> - Lever le crayon (ne dessine pas)</li>
+                        <li>✏️ <strong>BC</strong> - Baisser le crayon (dessine)</li>
+                        <li>🎨 <strong>FCC n</strong> - Changer la couleur (n = 0 à 31)</li>
+                        <li>📏 <strong>FEPAIS n</strong> - Épaisseur du trait</li>
+                    </ul>
+
+                    <h3>4️⃣ Commandes d'affichage</h3>
+                    <ul>
+                        <li>🗑️ <strong>VE</strong> - Vider l'écran</li>
+                        <li>❌ <strong>CT</strong> - Cacher la tortue</li>
+                        <li>✅ <strong>MT</strong> - Montrer la tortue</li>
+                        <li>🎯 <strong>Origine</strong> - Repositionner la tortue</li>
+                    </ul>
+
+                    <h3>5️⃣ Formes - Commandes avancées</h3>
+                    <ul>
+                        <li>⭕ <strong>Cercle D</strong> - Dessiner un cercle de diamètre D</li>
+                        <li>🟩 <strong>Carré côté</strong> - Dessiner un carré</li>
+                        <li>🎨 <strong>FCC n remplis</strong> - Remplir avec couleur</li>
+                    </ul>
+
+                    <h3>6️⃣ Boucles - REPETE</h3>
+                    <div class="definition-box">
+                        <p><strong>Structure :</strong></p>
+                        <pre>REPETE n [
+    instructions
+]</pre>
+                        <p><strong>Exemple - Carré :</strong></p>
+                        <pre>REPETE 4 [
+    AV 100
+    TD 90
+]</pre>
+                    </div>
+
+                    <h3>7️⃣ Procédures</h3>
+                    <div class="definition-box">
+                        <p><strong>Structure :</strong></p>
+                        <pre>POUR nom_procedure
+    instructions
+FIN</pre>
+                        <p><strong>Exemple simple :</strong></p>
+                        <pre>POUR CARRE
+    REPETE 4 [
+        AV 100
+        TD 90
+    ]
+FIN</pre>
+                        <p>Utilisation : <code>CARRE</code></p>
+                    </div>
+
+                    <h3>8️⃣ Procédures avec paramètres</h3>
+                    <div class="definition-box">
+                        <p><strong>Structure :</strong></p>
+                        <pre>POUR CARRE :cote
+    REPETE 4 [
+        AV :cote
+        TD 90
+    ]
+FIN</pre>
+                        <p><strong>Utilisation :</strong></p>
+                        <ul>
+                            <li>CARRE 50 → Carré de 50 pas</li>
+                            <li>CARRE 150 → Carré de 150 pas</li>
+                        </ul>
+                    </div>
+
+                    <h3>9️⃣ Couleurs disponibles (Codes FCC)</h3>
+                    <table>
+                        <tr>
+                            <th>Code</th>
+                            <th>Couleur</th>
+                            <th>Code</th>
+                            <th>Couleur</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>Noir</td>
+                            <td>6</td>
+                            <td>Rouge</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Blanc</td>
+                            <td>7</td>
+                            <td>Vert clair</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Gris foncé</td>
+                            <td>8</td>
+                            <td>Bleu</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Gris clair</td>
+                            <td>9</td>
+                            <td>Jaune</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Gris moyen</td>
+                            <td>18</td>
+                            <td>Orange</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Gris</td>
+                            <td>10</td>
+                            <td>Magenta</td>
+                        </tr>
+                    </table>
+
+                    <h3>🔟 Exemple complet - Programme</h3>
+                    <div class="definition-box">
+                        <pre>VE              // Effacer l'écran
+CT              // Cacher la tortue
+
+POUR CARRE :taille
+    REPETE 4 [
+        AV :taille
+        TD 90
+    ]
+FIN
+
+// Dessiner 3 carrés
+CARRE 50
+LC              // Lever le crayon
+AV 20
+BC              // Baisser le crayon
+CARRE 80
+LC
+AV 20
+BC
+CARRE 120</pre>
+                    </div>
+
+                    <div class="key-points">
+                        <h4>✏️ À retenir</h4>
+                        <ul>
+                            <li>LOGO utilise une tortue graphique pour dessiner</li>
+                            <li>AV/RE pour déplacer, TD/TG pour tourner</li>
+                            <li>LC/BC pour lever/baisser le crayon</li>
+                            <li>REPETE pour répéter des instructions</li>
+                            <li>POUR/FIN pour créer des procédures</li>
+                            <li>Paramètres avec : (ex: :taille)</li>
+                            <li>FCC n pour changer les couleurs (0-31)</li>
+                        </ul>
+                    </div>
+                </div>
+            `
+        };
+
+        function getUnit() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('unit') || 'rappel';
+        }
+
+        function displayTrace() {
+            const unit = getUnit();
+            const traceContent = document.getElementById('traceContent');
+            
+            if (traces[unit]) {
+                traceContent.innerHTML = traces[unit];
+            } else {
+                traceContent.innerHTML = '<p style="color: red;">Trace écrit non trouvée.</p>';
+            }
+        }
+
+        function goBack() {
+            history.back();
+        }
+
+        // Afficher le contenu au chargement
+        document.addEventListener('DOMContentLoaded', displayTrace);
+    </script>
+</body>
+</html>
