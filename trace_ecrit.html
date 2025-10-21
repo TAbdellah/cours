@@ -124,6 +124,67 @@
             font-weight: 500;
         }
 
+        .vocabulary-section {
+            background: linear-gradient(135deg, #ffe0f0 0%, #ffb3d9 100%);
+            border: 3px solid #ff69b4;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
+        }
+
+        .vocabulary-section h3 {
+            color: #c2185b;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .vocab-table th {
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            color: white;
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .vocab-table td {
+            padding: 1rem 1.2rem;
+            border-bottom: 2px solid #ffe0f0;
+            font-size: 0.95rem;
+        }
+
+        .vocab-table tr:hover {
+            background: #fff5f9;
+        }
+
+        .vocab-fr {
+            color: #1976d2;
+            font-weight: 600;
+        }
+
+        .vocab-ar {
+            color: #d32f2f;
+            font-weight: 600;
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+        }
+
+        .vocab-def {
+            color: #555;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
         .table-responsive {
             overflow-x: auto;
             margin: 2rem 0;
@@ -229,6 +290,14 @@
             .btn {
                 width: 100%;
             }
+
+            .vocab-table {
+                font-size: 0.85rem;
+            }
+
+            .vocab-table td {
+                padding: 0.8rem;
+            }
         }
 
         pre {
@@ -272,7 +341,7 @@
                     <ul>
                         <li>📄 <strong>Texte</strong> - Caractères et mots</li>
                         <li>🖼️ <strong>Image</strong> - Représentation visuelle</li>
-                        <li>🔊 <strong>Son</strong> - Données audio</li>
+                        <li>📊 <strong>Son</strong> - Données audio</li>
                         <li>🎥 <strong>Vidéo</strong> - Séquences d'images</li>
                     </ul>
 
@@ -286,6 +355,46 @@
                             <li>Une information peut être sous plusieurs formes</li>
                             <li>Le traitement transforme les données en résultats</li>
                         </ul>
+                    </div>
+
+                    <div class="vocabulary-section">
+                        <h3>📖 Vocabulaire - Rappel sur le Système Informatique</h3>
+                        <table class="vocab-table">
+                            <thead>
+                                <tr>
+                                    <th>Français</th>
+                                    <th>العربية (Arabe)</th>
+                                    <th>Explication</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="vocab-fr">Informatique</td>
+                                    <td class="vocab-ar">المعلوميات</td>
+                                    <td class="vocab-def">Science de traitement des données par ordinateur</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Information</td>
+                                    <td class="vocab-ar">معلومة</td>
+                                    <td class="vocab-def">Donnée ayant une signification</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Traitement</td>
+                                    <td class="vocab-ar">معالجة</td>
+                                    <td class="vocab-def">Suite d'opérations sur les données</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Données</td>
+                                    <td class="vocab-ar">بيانات</td>
+                                    <td class="vocab-def">Éléments d'information bruts</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Automatique</td>
+                                    <td class="vocab-ar">آلي</td>
+                                    <td class="vocab-def">Qui fonctionne sans intervention humaine</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             `,
@@ -301,7 +410,7 @@
 
                     <h3>2️⃣ Périphériques de base</h3>
                     
-                    <h4>🔵 Entrée (Input)</h4>
+                    <h4>📵 Entrée (Input)</h4>
                     <ul>
                         <li>⌨️ Clavier - Saisir du texte</li>
                         <li>🖱️ Souris - Pointer et cliquer</li>
@@ -309,10 +418,10 @@
                         <li>🎤 Microphone - Capturer l'audio</li>
                     </ul>
 
-                    <h4>🔴 Sortie (Output)</h4>
+                    <h4>📴 Sortie (Output)</h4>
                     <ul>
                         <li>🖥️ Écran - Afficher les informations</li>
-                        <li>🔊 Haut-parleurs - Diffuser le son</li>
+                        <li>📊 Haut-parleurs - Diffuser le son</li>
                         <li>🖨️ Imprimante - Imprimer sur papier</li>
                         <li>🎧 Casque - Écouter l'audio</li>
                     </ul>
@@ -345,8 +454,8 @@
                     <p><strong>Définition :</strong> Logiciel de base qui gère le matériel d'un ordinateur</p>
                     <ul>
                         <li>🪟 Windows</li>
-                        <li>🐧 Linux</li>
-                        <li>🍎 macOS</li>
+                        <li>🧊 Linux</li>
+                        <li>🎯 macOS</li>
                         <li>📱 Android</li>
                     </ul>
 
@@ -359,11 +468,11 @@
 
                     <h3>6️⃣ Unités de stockage</h3>
                     <ul>
-                        <li>🔹 <strong>1 octet (B)</strong> = 8 bits</li>
-                        <li>🔹 <strong>1 kilooctet (kB)</strong> = 1 000 B</li>
-                        <li>🔹 <strong>1 mégaoctet (MB)</strong> = 1 000 kB</li>
-                        <li>🔹 <strong>1 gigaoctet (GB)</strong> = 1 000 MB</li>
-                        <li>🔹 <strong>1 téraoctet (TB)</strong> = 1 000 GB</li>
+                        <li>📹 <strong>1 octet (B)</strong> = 8 bits</li>
+                        <li>📹 <strong>1 kilooctet (kB)</strong> = 1 000 B</li>
+                        <li>📹 <strong>1 mégaoctet (MB)</strong> = 1 000 kB</li>
+                        <li>📹 <strong>1 gigaoctet (GB)</strong> = 1 000 MB</li>
+                        <li>📹 <strong>1 téraoctet (TB)</strong> = 1 000 GB</li>
                     </ul>
 
                     <h3>7️⃣ Réseau local (LAN)</h3>
@@ -384,6 +493,56 @@
                             <li>Système d'exploitation gère le matériel</li>
                             <li>Fichier et dossier organisent les données</li>
                         </ul>
+                    </div>
+
+                    <div class="vocabulary-section">
+                        <h3>📖 Vocabulaire - Environnement Système Informatique</h3>
+                        <table class="vocab-table">
+                            <thead>
+                                <tr>
+                                    <th>Français</th>
+                                    <th>العربية (Arabe)</th>
+                                    <th>Explication</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="vocab-fr">Périphérique</td>
+                                    <td class="vocab-ar">جهاز طرفي (ملحق خارجي) </td>
+                                    <td class="vocab-def">Équipement connecté à l'ordinateur</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Processeur (CPU)</td>
+                                    <td class="vocab-ar">معالج</td>
+                                    <td class="vocab-def">Cerveau de l'ordinateur</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">RAM</td>
+                                    <td class="vocab-ar">الذاكرة العشوائية</td>
+                                    <td class="vocab-def">Mémoire temporaire et rapide</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Stockage</td>
+                                    <td class="vocab-ar">التخزين</td>
+                                    <td class="vocab-def">Sauvegarde permanente des données</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Extension</td>
+                                    <td class="vocab-ar">الامتداد</td>
+                                    <td class="vocab-def">Suffixe du nom de fichier indiquant le type</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Système d'exploitation</td>
+                                    <td class="vocab-ar">نظام التشغيل</td>
+                                    <td class="vocab-def">Logiciel principal gérant l'ordinateur</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Réseau LAN</td>
+                                    <td class="vocab-ar">شبكة محلية</td>
+                                    <td class="vocab-def">Réseau d'ordinateurs reliés entre eux</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             `,
@@ -430,6 +589,56 @@
                             <li>Améliore la collaboration en équipe</li>
                         </ul>
                     </div>
+
+                    <div class="vocabulary-section">
+                        <h3>📖 Vocabulaire - Échange d'Informations</h3>
+                        <table class="vocab-table">
+                            <thead>
+                                <tr>
+                                    <th>Français</th>
+                                    <th>العربية (Arabe)</th>
+                                    <th>Explication</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="vocab-fr">Partage</td>
+                                    <td class="vocab-ar">المشاركة</td>
+                                    <td class="vocab-def">Action de rendre accessible à d'autres</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Dossier partagé</td>
+                                    <td class="vocab-ar">مجلد مشترك</td>
+                                    <td class="vocab-def">Répertoire accessible en réseau</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Autorisation</td>
+                                    <td class="vocab-ar">ترخيص</td>
+                                    <td class="vocab-def">Permission d'accéder ou modifier</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Messagerie</td>
+                                    <td class="vocab-ar">البريد الإلكتروني / الرسائل</td>
+                                    <td class="vocab-def">Système d'envoi de messages</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Instantané</td>
+                                    <td class="vocab-ar">فوري</td>
+                                    <td class="vocab-def">En temps réel, immédiat</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Explorateur</td>
+                                    <td class="vocab-ar">مستعرض الملفات </td>
+                                    <td class="vocab-def">Outil de navigation des fichiers</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Lecteur mappé</td>
+                                    <td class="vocab-ar">محرك أقراص مرتبط عبر الشبكة</td>
+                                    <td class="vocab-def">Raccourci pour accéder au dossier partagé</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             `,
 
@@ -444,9 +653,9 @@
 
                     <h3>2️⃣ Exemples de tableurs</h3>
                     <ul>
-                        <li>📑 Microsoft Excel</li>
-                        <li>📑 Google Sheets</li>
-                        <li>📑 LibreOffice Calc</li>
+                        <li>📊 Microsoft Excel</li>
+                        <li>📊 Google Sheets</li>
+                        <li>📊 LibreOffice Calc</li>
                     </ul>
 
                     <h3>3️⃣ Structure d'une feuille</h3>
@@ -488,12 +697,67 @@
                             <li>Graphique = Visualisation des données</li>
                         </ul>
                     </div>
+
+                    <div class="vocabulary-section">
+                        <h3>📖 Vocabulaire - Tableurs</h3>
+                        <table class="vocab-table">
+                            <thead>
+                                <tr>
+                                    <th>Français</th>
+                                    <th>العربية (Arabe)</th>
+                                    <th>Explication</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="vocab-fr">Tableur</td>
+                                    <td class="vocab-ar">جدول البيانات</td>
+                                    <td class="vocab-def">Logiciel de gestion de tableaux et calculs</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Cellule</td>
+                                    <td class="vocab-ar">خانة</td>
+                                    <td class="vocab-def">Case d'intersection ligne-colonne</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Formule</td>
+                                    <td class="vocab-ar">صيغة</td>
+                                    <td class="vocab-def">Expression de calcul commençant par =</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Fonction</td>
+                                    <td class="vocab-ar">دالة</td>
+                                    <td class="vocab-def">Calcul prédéfini (SOMME, MOYENNE, etc.)</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Plage</td>
+                                    <td class="vocab-ar">نطاق</td>
+                                    <td class="vocab-def">Ensemble de cellules (A1:A10)</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Graphique</td>
+                                    <td class="vocab-ar">الرسم البياني</td>
+                                    <td class="vocab-def">Représentation visuelle des données</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Histogramme</td>
+                                    <td class="vocab-ar">رسم بياني عمودي</td>
+                                    <td class="vocab-def">Graphique en barres pour comparer</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Secteur (Camembert)</td>
+                                    <td class="vocab-ar">رسم بياني دائري</td>
+                                    <td class="vocab-def">Graphique montrant les pourcentages</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             `,
 
             unite4: `
                 <div class="trace-content">
-                    <h2>🐢 Unité 4 : Programmation Logo</h2>
+                    <h2>🢀 Unité 4 : Programmation Logo</h2>
                     
                     <h3>1️⃣ Définitions</h3>
                     <div class="definition-box">
@@ -561,6 +825,71 @@ FIN</pre>
                             <li>Paramètres avec : (ex: :taille)</li>
                         </ul>
                     </div>
+
+                    <div class="vocabulary-section">
+                        <h3>📖 Vocabulaire - Programmation Logo</h3>
+                        <table class="vocab-table">
+                            <thead>
+                                <tr>
+                                    <th>Français</th>
+                                    <th>العربية (Arabe)</th>
+                                    <th>Explication</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="vocab-fr">Programme</td>
+                                    <td class="vocab-ar">برنامج</td>
+                                    <td class="vocab-def">Suite d'instructions pour l'ordinateur</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Langage</td>
+                                    <td class="vocab-ar">لغة البرمجة</td>
+                                    <td class="vocab-def">Système de communication avec l'ordinateur</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Instruction</td>
+                                    <td class="vocab-ar">أمر</td>
+                                    <td class="vocab-def">Commande donnée à la tortue</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Tortue graphique</td>
+                                    <td class="vocab-ar">سلحفاة الرسم</td>
+                                    <td class="vocab-def">Objet qui se déplace et dessine</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Boucle (REPETE)</td>
+                                    <td class="vocab-ar">حلقة التكرار</td>
+                                    <td class="vocab-def">Répétition d'instructions</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Procédure</td>
+                                    <td class="vocab-ar">إجراء</td>
+                                    <td class="vocab-def">Ensemble d'instructions regroupées</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Paramètre</td>
+                                    <td class="vocab-ar">معامل</td>
+                                    <td class="vocab-def">Variable modifiable dans une procédure</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Variable</td>
+                                    <td class="vocab-ar">متغير</td>
+                                    <td class="vocab-def">Élément qui peut changer de valeur</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Crayon</td>
+                                    <td class="vocab-ar">القلم</td>
+                                    <td class="vocab-def">Outil de dessinage de la tortue</td>
+                                </tr>
+                                <tr>
+                                    <td class="vocab-fr">Rotation</td>
+                                    <td class="vocab-ar">دوران</td>
+                                    <td class="vocab-def">Changement de direction</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             `
         };
@@ -581,11 +910,10 @@ FIN</pre>
             }
         }
 
-
-function closeTraceEcrit() {
-    // Redirection vers votre site
-    window.location.href = 'https://tabdellah.github.io/cours/';
-}
+        function closeTraceEcrit() {
+            // Redirection vers votre site
+            window.location.href = 'https://tabdellah.github.io/cours/';
+        }
 
         // Afficher le contenu au chargement
         document.addEventListener('DOMContentLoaded', displayTrace);
