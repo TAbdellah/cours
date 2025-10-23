@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <title>Cours d'Informatique - 2ème Année</title>
     <style>
         * {
@@ -14,15 +15,15 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ffeaa7 100%);
+      background:linear-gradient(135deg, #fff9e6 0%, #ffe6f0 25%, #e6f3ff 50%, #f0e6ff 75%, #fff9e6 100%);
             min-height: 100vh;
             color: #2d3436;
             line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 50%, #fd79a8 100%);
-            padding: 3.5rem 2rem;
+      background:linear-gradient(135deg, #fff9e6 0%, #ffe6f0 25%, #e6f3ff 50%, #f0e6ff 75%, #fff9e6 100%);
+            padding: 0.5rem 2rem;
             text-align: center;
             box-shadow: 0 8px 32px rgba(108, 92, 231, 0.3);
             position: relative;
@@ -31,7 +32,7 @@
         }
 
         header::before {
-            content: '✨ 📚 ✏️ 🎓 💡 🖥️ 🌟 🔬';
+            /* content: '✨ 📚 ✏️ 🎓 💡 🖥️ 🌟 🔬'; */
             position: absolute;
             top: 50%;
             left: 50%;
@@ -53,7 +54,7 @@
         }
 
         header h1 {
-            color: #ffffff;
+            color: #6c5ce7;
             font-size: 3rem;
             margin-bottom: 0.8rem;
             font-weight: 800;
@@ -75,7 +76,7 @@
         }
 
         header p {
-            color: #ffffff;
+            color: #6c5ce7;
             font-size: 1.3rem;
             position: relative;
             font-weight: 400;
@@ -108,7 +109,7 @@
         }
 
         .unit-card {
-            background: linear-gradient(135deg, #ffffff 0%, #ffeaa7 5%, #ffffff 100%);
+      background:linear-gradient(135deg, #fff9e6 0%, #ffe6f0 25%, #e6f3ff 50%, #f0e6ff 75%, #fff9e6 100%);
             border-radius: 25px;
             padding: 2.5rem;
             box-shadow: 0 8px 30px rgba(253, 203, 110, 0.3);
@@ -235,7 +236,7 @@
             padding: 1.2rem 1.5rem;
             border: none;
             border-radius: 25px;
-            font-size: 1rem;
+            font-size: 14px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
@@ -243,13 +244,16 @@
         }
 
         .btn-lessons {
-            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-            color: white;
+      background:linear-gradient(135deg, #ff6b9d, #fbbf24);
+            color: black;
+                        text-align: center;
+
         }
 
         .btn-exercises {
             background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
             color: white;
+            text-align: center;
         }
 
         .btn:hover:not(:disabled) {
@@ -451,9 +455,9 @@
         .footer {
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 50%, #fd79a8 100%);
+            /* background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 50%, #fd79a8 100%); */
             margin-top: 4rem;
-            color: #ffffff;
+            /* color: #ffffff; */
             box-shadow: 0 -5px 30px rgba(108, 92, 231, 0.3);
             border-top: 5px solid #fdcb6e;
         }
@@ -471,7 +475,7 @@
 
         .footer .author {
             font-weight: 600;
-            color: #fdcb6e;
+            color: #ff6b6b;
         }
 
         .footer .heart {
@@ -536,13 +540,38 @@
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(135deg, #6c5ce7 0%, #d63031 100%);
         }
+
+            /* .sidebar-logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:40px;
+      font-weight:800;
+      font-size:18px;
+      letter-spacing:0.5px
+    }
+
+    .sidebar-logo i{
+      width:45px;
+      height:45px;
+      background:rgba(255,255,255,0.25);
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      backdrop-filter:blur(10px)
+    } */
     </style>
 </head>
 
 <body>
     <header>
-        <h1>💻 Cours d'Informatique</h1>
-        <p>2ème Année - Programme Complet</p>
+    <div class="sidebar-logo" style="font-size: 30px;">
+      <i class="fas fa-graduation-cap" style="font-size: 50px ;"></i><br>
+      <H1>EduTech</H1>
+    </div>
+        <p>Bienvenue sur le site des cours d’informatique 💻 du collège</p>
     </header>
 
     <div class="container">
@@ -556,8 +585,7 @@
                 <div class="button-group">
                     <button type="button" class="btn btn-lessons" onclick="openLesson('rappel')">📖 Voir la
                         Leçon</button>
-                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
-                            class="coming-soon">Bientôt</span></button>
+                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices </button>
                 </div>
             </div>
 
@@ -600,8 +628,7 @@
                 <div class="button-group">
                     <button type="button" class="btn btn-lessons" onclick="openLesson('unite2')">📖 Voir la
                         Leçon</button>
-                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
-                            class="coming-soon">Bientôt</span></button>
+                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices</button>
                 </div>
             </div>
 
@@ -622,8 +649,7 @@
                 <div class="button-group">
                     <button type="button" class="btn btn-lessons" onclick="openLesson('unite3')">📖 Voir la
                         Leçon</button>
-                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
-                            class="coming-soon">Bientôt</span></button>
+                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices</button>
                 </div>
             </div>
 
@@ -644,8 +670,7 @@
                 <div class="button-group">
                     <button type="button" class="btn btn-lessons" onclick="openLesson('unite4')">📖 Voir la
                         Leçon</button>
-                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices <span
-                            class="coming-soon">Bientôt</span></button>
+                    <button type="button" class="btn btn-exercises" disabled>📝 Exercices</button>
                 </div>
             </div>
         </div>
